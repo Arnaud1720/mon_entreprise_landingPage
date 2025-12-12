@@ -2,7 +2,7 @@
 
 Landing page moderne et responsive pour une micro-entreprise de développement web, développée avec **Angular 17+** et **TailwindCSS**.
 
-## 🚀 Fonctionnalités
+##  Fonctionnalités
 
 - ✅ **Design moderne et responsive** (mobile-first)
 - ✅ **Single Page Application** (SPA) avec navigation par ancres
@@ -41,7 +41,7 @@ npm start
 # L'application sera disponible sur http://localhost:4200/
 ```
 
-## 🏗️ Build
+## E Build
 
 ```bash
 # Build de production
@@ -50,7 +50,7 @@ npm run build
 # Les fichiers compilés seront dans le dossier dist/mon-entreprise-landing/
 ```
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 mon_entreprise_landingPage/
@@ -69,47 +69,10 @@ mon_entreprise_landingPage/
 ├── tsconfig.json                  # Configuration TypeScript
 └── package.json                   # Dépendances npm
 ```
-
-## 🎨 Personnalisation
-
-### Informations de l'entreprise
-
-Pour personnaliser les informations de votre entreprise, modifiez les placeholders dans `src/app/app.component.html` :
-
-- `[Nom de la micro-entreprise]` → Remplacer par le nom de votre entreprise
-- `[Ton Prénom Nom]` → Remplacer par votre nom
-- `[ton.email&#64;pro.fr]` → Remplacer par votre email (en conservant `&#64;` pour le @)
-- `[06 xx xx xx xx]` → Remplacer par votre numéro de téléphone
-- `[votre-profil]` → Remplacer par votre profil Malt
-
-### Couleurs
-
-Les couleurs principales sont définies dans `tailwind.config.js`. Modifiez la palette `primary` pour changer le thème :
-
-```javascript
-theme: {
-  extend: {
-    colors: {
-      primary: {
-        // Personnalisez ici
-      }
-    }
-  }
-}
-```
-
 ### Compétences techniques
 
 Les compétences sont définies dans `src/app/app.component.ts` dans le tableau `skills`. Ajoutez ou supprimez des compétences selon vos besoins.
 
-## 📝 Formulaire de contact
-
-Le formulaire de contact est actuellement en mode **démo** :
-- Il affiche les données dans la console du navigateur
-- Aucun email n'est envoyé
-- Pour une vraie intégration, vous devrez :
-  - Ajouter un backend (Node.js, PHP, etc.)
-  - Ou utiliser un service tiers (EmailJS, Formspree, etc.)
 
 ## 🎯 Technologies utilisées
 
@@ -138,11 +101,3 @@ Vous pouvez déployer cette application sur :
 ## 📄 Licence
 
 Ce projet est un exemple/template pour une landing page de micro-entreprise.
-
-## 👤 Auteur
-
-Développé avec Angular 17+ et TailwindCSS pour une micro-entreprise de développement web.
-
----
-
-**Note** : Ce projet est une landing page statique sans backend. Pour ajouter des fonctionnalités comme l'envoi d'emails, vous devrez intégrer un service backend ou utiliser des services tiers.

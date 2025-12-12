@@ -9,7 +9,8 @@
         "@schematics/angular:component": {
           "style": "css",
           "standalone": true
-        }
+        } 
+        
       },
       "root": "",
       "sourceRoot": "src",
@@ -27,7 +28,14 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "css",
             "assets": [
-              "src/assets"
+              "src/assets",
+              "src/robots.txt",
+              "src/sitemap.xml",
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
+              }
             ],
             "styles": [
               "src/styles.css"
