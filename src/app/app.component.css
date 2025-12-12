@@ -1,0 +1,27 @@
+/* Styles spécifiques au composant (optionnel, Tailwind gère la plupart des styles) */
+
+/* Animation smooth pour le menu mobile */
+.mobile-menu-transition {
+  transition: max-height 0.3s ease-in-out;
+}
+
+/* Styles pour les cartes avec effet hover */
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Animation pour le formulaire soumis */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-message {
+  animation: fadeIn 0.3s ease-in-out;
+}
