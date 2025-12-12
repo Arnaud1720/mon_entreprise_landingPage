@@ -14,31 +14,31 @@ export class ProcessComponent {
       number: 1,
       title: 'Prise de contact & cadrage',
       description: 'Échange pour comprendre vos besoins, objectifs et contraintes.',
-      icon: '💬'
+      iconType: 'chat'
     },
     {
       number: 2,
       title: 'Proposition & devis détaillé',
       description: 'Proposition technique et commerciale adaptée à votre projet.',
-      icon: '📋'
+      iconType: 'document'
     },
     {
       number: 3,
       title: 'Développement',
       description: 'Réalisation de votre projet avec points réguliers d\'avancement.',
-      icon: '⚙️'
+      iconType: 'code'
     },
     {
       number: 4,
       title: 'Recette & mise en ligne',
       description: 'Tests, validation et déploiement de votre solution.',
-      icon: '🚀'
+      iconType: 'rocket'
     },
     {
       number: 5,
       title: 'Formation & accompagnement',
       description: 'Formation pour une prise en main autonome et support post-livraison.',
-      icon: '🎓'
+      iconType: 'academic'
     }
   ];
 }
