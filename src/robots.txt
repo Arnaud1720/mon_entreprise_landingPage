@@ -1,0 +1,29 @@
+# robots.txt pour optimisation SEO
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://votresite.com/sitemap.xml
+
+# Crawl-delay (optionnel, ajuste selon tes besoins)
+Crawl-delay: 10
+
+# Bots spécifiques
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Bloquer les mauvais bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

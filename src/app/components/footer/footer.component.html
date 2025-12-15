@@ -1,8 +1,34 @@
-<footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-12 relative overflow-hidden">
-  <!-- Effet de fond animé -->
+<footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-12 relative overflow-hidden footer-dev-theme"
+        (mouseenter)="onFooterHover(true)" (mouseleave)="onFooterHover(false)" (mousemove)="onMouseMove($event)">
+  <!-- Canvas pour la pluie de code Matrix moderne -->
+  <canvas #matrixCanvas class="absolute inset-0 w-full h-full pointer-events-none opacity-30"></canvas>
+
+  <!-- Particules de code flottantes -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div *ngFor="let particle of codeParticles"
+         class="absolute text-xs font-mono animate-float-code"
+         [style.left.%]="particle.x"
+         [style.top.%]="particle.y"
+         [style.animationDelay]="particle.delay + 's'"
+         [style.animationDuration]="particle.duration + 's'"
+         [ngClass]="particle.color">
+      {{ particle.symbol }}
+    </div>
+  </div>
+
+  <!-- Grille de fond 3D perspective -->
+  <div class="absolute inset-0 perspective-grid opacity-5"></div>
+
+  <!-- Effet de fond animé original amélioré -->
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-0 left-1/4 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl animate-pulse-slow"></div>
     <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl animate-pulse-slow" style="animation-delay: 1s"></div>
+    <div class="absolute top-1/2 left-1/2 w-48 h-48 bg-cyan-500 rounded-full filter blur-3xl animate-pulse-slow" style="animation-delay: 2s"></div>
+  </div>
+
+  <!-- Lignes de scan animées -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="scan-line"></div>
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -88,8 +114,29 @@
               </svg>
             </a>
           </p>
+
+          <!-- Indicateur "Made with code" animé -->
+          <div class="flex items-center space-x-2 text-gray-500">
+            <span class="text-xs">Crafted with</span>
+            <div class="flex space-x-1 font-mono text-xs binary-pulse">
+              <span class="text-blue-400">0</span>
+              <span class="text-purple-400">1</span>
+              <span class="text-cyan-400">0</span>
+              <span class="text-blue-400">1</span>
+            </div>
+            <span class="text-xs">&</span>
+            <span class="text-red-400 animate-pulse">&#10084;</span>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Curseur binaire personnalisé -->
+  <div *ngIf="isFooterHovered && showBinaryCursor"
+       class="fixed pointer-events-none z-50 font-mono text-xs transition-all duration-75"
+       [style.left.px]="cursorX + 15"
+       [style.top.px]="cursorY + 15">
+    <span class="text-cyan-400 drop-shadow-glow">{{ cursorBinary }}</span>
   </div>
 </footer>

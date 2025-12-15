@@ -1,0 +1,156 @@
+/* ===== FOOTER DEV THEME ===== */
+
+/* Animation des particules de code flottantes */
+@keyframes floatCode {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-5px) rotate(-3deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-30px) translateX(15px) rotate(8deg);
+    opacity: 0.7;
+  }
+}
+
+.animate-float-code {
+  animation: floatCode 10s ease-in-out infinite;
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Grille 3D perspective */
+.perspective-grid {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center top;
+  height: 200%;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Ligne de scan */
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(59, 130, 246, 0.5),
+    rgba(139, 92, 246, 0.8),
+    rgba(6, 182, 212, 0.5),
+    transparent
+  );
+  animation: scanMove 4s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+@keyframes scanMove {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Animation pulse pour le binaire */
+.binary-pulse span {
+  animation: binaryGlow 1.5s ease-in-out infinite;
+}
+
+.binary-pulse span:nth-child(1) { animation-delay: 0s; }
+.binary-pulse span:nth-child(2) { animation-delay: 0.2s; }
+.binary-pulse span:nth-child(3) { animation-delay: 0.4s; }
+.binary-pulse span:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes binaryGlow {
+  0%, 100% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+}
+
+/* Effet glow pour le curseur */
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 5px rgba(6, 182, 212, 0.8))
+          drop-shadow(0 0 10px rgba(6, 182, 212, 0.5));
+  animation: cursorPulse 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes cursorPulse {
+  0% {
+    filter: drop-shadow(0 0 3px rgba(6, 182, 212, 0.6))
+            drop-shadow(0 0 6px rgba(6, 182, 212, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 1))
+            drop-shadow(0 0 15px rgba(6, 182, 212, 0.6));
+  }
+}
+
+/* Style du footer dev */
+.footer-dev-theme {
+  position: relative;
+}
+
+/* Effet de bordure lumineuse en haut */
+.footer-dev-theme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(59, 130, 246, 0.5),
+    rgba(139, 92, 246, 0.8),
+    rgba(6, 182, 212, 0.5),
+    transparent
+  );
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Canvas Matrix styling */
+canvas {
+  mix-blend-mode: screen;
+}
