@@ -1,6 +1,28 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  <!-- Axeptio - Gestion du consentement cookies (RGPD) - DOIT être chargé en premier -->
+  <script>
+    window.axeptioSettings = {
+      clientId: "693faa03fdf5cadc8443127a",
+      cookiesVersion: "1de77d89-eae3-4210-88c7-4ea08d05890b",
+      googleConsentMode: {
+        default: {
+          analytics_storage: "denied",
+          ad_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          wait_for_update: 500
+        }
+      }
+    };
+    (function(d, s) {
+      var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
+      e.async = true; e.src = "https://static.axept.io/sdk.js";
+      t.parentNode.insertBefore(e, t);
+    })(document, "script");
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2VD6GKLYF"></script>
   <script>
