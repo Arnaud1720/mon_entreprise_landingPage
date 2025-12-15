@@ -4,7 +4,7 @@
 
   <!-- Page d'accueil -->
   <url>
-    <loc>https://votresite.com/</loc>
+    <loc>https://nonodevco.com/</loc>
     <lastmod>2025-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -12,7 +12,7 @@
 
   <!-- Section Services -->
   <url>
-    <loc>https://votresite.com/#services</loc>
+    <loc>https://nonodevco.com/#services</loc>
     <lastmod>2025-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -20,7 +20,7 @@
 
   <!-- Section Process -->
   <url>
-    <loc>https://votresite.com/#process</loc>
+    <loc>https://nonodevco.com/#process</loc>
     <lastmod>2025-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -28,7 +28,7 @@
 
   <!-- Section À propos -->
   <url>
-    <loc>https://votresite.com/#about</loc>
+    <loc>https://nonodevco.com/#about</loc>
     <lastmod>2025-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -36,7 +36,7 @@
 
   <!-- Section Avis clients -->
   <url>
-    <loc>https://votresite.com/#testimonials</loc>
+    <loc>https://nonodevco.com/#testimonials</loc>
     <lastmod>2025-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -44,10 +44,10 @@
 
   <!-- Section Contact -->
   <url>
-    <loc>https://votresite.com/#contact</loc>
+    <loc>https://nonodevco.com/#contact</loc>
     <lastmod>2025-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
 </urlset>
+
