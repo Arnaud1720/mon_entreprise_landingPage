@@ -6,7 +6,7 @@ Disallow: /api/
 Disallow: /admin/
 
 # Sitemap
-Sitemap: https://votresite.com/sitemap.xml
+Sitemap: https://nonodevco.com/sitemap.xml
 
 # Crawl-delay (optionnel, ajuste selon tes besoins)
 Crawl-delay: 10
