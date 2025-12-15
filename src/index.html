@@ -1,7 +1,30 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <!-- Axeptio - Gestion du consentement cookies (RGPD) - DOIT être chargé en premier -->
+  <!-- 1. Google Consent Mode - Configuration par défaut (DOIT être en premier) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Consentement par défaut pour l'Union Européenne (27 pays) - tout bloqué
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'regions': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE']
+    });
+
+    // Consentement par défaut pour le reste du monde - autorisé
+    gtag('consent', 'default', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted'
+    });
+  </script>
+
+  <!-- 2. Axeptio - Bannière de consentement RGPD -->
   <script>
     window.axeptioSettings = {
       clientId: "693faa03fdf5cadc8443127a",
@@ -23,11 +46,9 @@
     })(document, "script");
   </script>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- 3. Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2VD6GKLYF"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-W2VD6GKLYF');
   </script>
