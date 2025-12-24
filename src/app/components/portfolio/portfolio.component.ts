@@ -19,13 +19,13 @@ export class PortfolioComponent implements OnInit, OnDestroy {
 
   // Vidéos du projet
   videos: Video[] = [
-    { src: 'assets/portfolio/video_1.mp4', title: 'Connexion et authentification' },
-    { src: 'assets/portfolio/video_2.mp4', title: 'Dashboard administrateur' },
-    { src: 'assets/portfolio/video_3.mp4', title: 'Gestion des patients' },
-    { src: 'assets/portfolio/video_4.mp4', title: 'Gestion des médecins' },
-    { src: 'assets/portfolio/video_5.mp4', title: 'Prise de rendez-vous' },
-    { src: 'assets/portfolio/video_6.mp4', title: 'Interface utilisateur' },
-    { src: 'assets/portfolio/video_7.mp4', title: 'Fonctionnalités avancées' }
+    { src: '/assets/portfolio/video_1.mp4', title: 'Connexion et authentification' },
+    { src: '/assets/portfolio/video_2.mp4', title: 'Dashboard administrateur' },
+    { src: '/assets/portfolio/video_3.mp4', title: 'Gestion des patients' },
+    { src: '/assets/portfolio/video_4.mp4', title: 'Gestion des médecins' },
+    { src: '/assets/portfolio/video_5.mp4', title: 'Prise de rendez-vous' },
+    { src: '/assets/portfolio/video_6.mp4', title: 'Interface utilisateur' },
+    { src: '/assets/portfolio/video_7.mp4', title: 'Fonctionnalités avancées' }
   ];
 
   selectedVideo: string = this.videos[0].src;
