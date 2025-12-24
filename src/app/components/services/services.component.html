@@ -10,10 +10,9 @@
       <p class="section-subtitle">Des solutions adaptées à vos besoins</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
       <!-- Offre 1: WordPress -->
-
-          <div class="service-card group"
+      <div class="service-card group"
            [class.animate-slide-in-left]="servicesVisible"
            [class.opacity-0]="!servicesVisible">
         <div class="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
@@ -142,9 +141,86 @@
           </div>
         </div>
       </div>
-    </div>
 
-    
+      <!-- Offre 3: SPA Angular Full Stack -->
+      <div class="service-card group border-2 border-cyan-500 relative overflow-hidden"
+           [class.animate-slide-in-right]="servicesVisible"
+           [class.opacity-0]="!servicesVisible"
+           style="animation-delay: 0.4s">
+        <div class="absolute top-4 right-4 z-20">
+          <span class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse-slow">
+            Full Stack
+          </span>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+            <!-- Logo Angular SVG -->
+            <svg viewBox="0 0 250 250" class="w-full h-full drop-shadow-lg">
+              <defs>
+                <linearGradient id="angularGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#DD0031"/>
+                  <stop offset="100%" style="stop-color:#C3002F"/>
+                </linearGradient>
+              </defs>
+              <polygon fill="url(#angularGradient)" points="125,30 125,30 125,30 31.9,63.2 46.1,186.3 125,230 125,230 125,230 203.9,186.3 218.1,63.2"/>
+              <polygon fill="#C3002F" points="125,30 125,52.2 125,52.1 125,153.4 125,153.4 125,230 125,230 203.9,186.3 218.1,63.2 125,30"/>
+              <path fill="#FFFFFF" d="M125,52.1L66.8,182.6h21.7l11.7-29.2h49.4l11.7,29.2H183L125,52.1zm17,83.3h-34l17-40.9L142,135.4z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-cyan-600 transition-colors">
+            SPA Angular Full Stack
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Application web complète avec frontend Angular moderne et backend Node.js/Express, idéale pour SaaS, e-commerce et applications métiers.
+          </p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Frontend Angular 17+ avec design responsive</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Backend Node.js / Express (API REST)</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Intégration paiement Stripe (checkout, webhooks)</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Génération de factures PDF automatique</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Déploiement (Vercel, Railway, OVH...)</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Maintenance et mises à jour incluses*</span>
+            </li>
+          </ul>
+          <div class="border-t pt-4">
+            <p class="text-xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">
+              À partir de ~2 500 € HT
+            </p>
+            <p class="text-sm text-gray-500">*3 mois de maintenance inclus</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Section Maintenance -->
     <div class="mt-16 max-w-4xl mx-auto"
@@ -157,7 +233,7 @@
           Pour assurer la pérennité de votre solution, je propose des services de maintenance et d'accompagnement.
         </p>
       </div>
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
           <h4 class="text-xl font-bold text-gray-900 mb-3">Maintenance WordPress</h4>
           <ul class="text-left space-y-2 text-gray-600">
@@ -183,20 +259,41 @@
           <h4 class="text-xl font-bold text-gray-900 mb-3">TMA Applications Java/Angular</h4>
           <ul class="text-left space-y-2 text-gray-600">
             <li class="flex items-center">
-              <span class="text-blue-600 mr-2">✓</span>
+              <span class="text-purple-600 mr-2">✓</span>
               Support et corrections de bugs
             </li>
             <li class="flex items-center">
-              <span class="text-blue-600 mr-2">✓</span>
+              <span class="text-purple-600 mr-2">✓</span>
               Évolutions fonctionnelles
             </li>
             <li class="flex items-center">
-              <span class="text-blue-600 mr-2">✓</span>
+              <span class="text-purple-600 mr-2">✓</span>
               Optimisations performances
             </li>
             <li class="flex items-center">
-              <span class="text-blue-600 mr-2">✓</span>
+              <span class="text-purple-600 mr-2">✓</span>
               Accompagnement technique
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-white to-cyan-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Maintenance SPA Full Stack</h4>
+          <ul class="text-left space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <span class="text-cyan-600 mr-2">✓</span>
+              Mises à jour Angular, Node.js et dépendances
+            </li>
+            <li class="flex items-center">
+              <span class="text-cyan-600 mr-2">✓</span>
+              Évolutions frontend et backend
+            </li>
+            <li class="flex items-center">
+              <span class="text-cyan-600 mr-2">✓</span>
+              Corrections et ajustements API
+            </li>
+            <li class="flex items-center">
+              <span class="text-cyan-600 mr-2">✓</span>
+              Support technique prioritaire
             </li>
           </ul>
         </div>

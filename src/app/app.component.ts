@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ServicesComponent } from './components/services/services.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ProcessComponent } from './components/process/process.component';
 import { AboutComponent } from './components/about/about.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BookingComponent } from './components/booking/booking.component';
 import { SeoService } from './services/seo.service';
 
 @Component({
@@ -18,9 +20,11 @@ import { SeoService } from './services/seo.service';
     HeaderComponent,
     HeroComponent,
     ServicesComponent,
+    PortfolioComponent,
     ProcessComponent,
     AboutComponent,
     TestimonialsComponent,
+    BookingComponent,
     ContactComponent,
     FooterComponent
   ],
