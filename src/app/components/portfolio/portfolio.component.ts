@@ -1,5 +1,6 @@
-import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, Inject, PLATFORM_ID, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { VideoProtectionService } from '../../services/video-protection/video-protection.service';
 
 interface Video {
   src: string;
@@ -13,9 +14,11 @@ interface Video {
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
 })
-export class PortfolioComponent implements OnInit, OnDestroy {
+export class PortfolioComponent implements OnInit, OnDestroy, AfterViewInit {
   portfolioVisible = false;
   private observer: IntersectionObserver | null = null;
+
+  @ViewChild('videoContainer') videoContainer!: ElementRef<HTMLDivElement>;
 
   // Vidéos du projet
   videos: Video[] = [
@@ -31,11 +34,31 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   selectedVideo: string = this.videos[0].src;
   selectedVideoTitle: string = this.videos[0].title;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private videoProtection: VideoProtectionService
+  ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.setupIntersectionObserver();
+    }
+  }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Appliquer la protection après le rendu
+      setTimeout(() => this.applyVideoProtection(), 500);
+    }
+  }
+
+  /**
+   * Applique les protections sur la vidéo
+   */
+  private applyVideoProtection(): void {
+    const container = document.querySelector('.video-container');
+    if (container) {
+      this.videoProtection.initProtection(container as HTMLElement);
     }
   }
 
@@ -69,6 +92,8 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   selectVideo(video: Video): void {
     this.selectedVideo = video.src;
     this.selectedVideoTitle = video.title;
+    // Réappliquer la protection après changement de vidéo
+    setTimeout(() => this.applyVideoProtection(), 100);
   }
 
   getVideoIndex(): number {

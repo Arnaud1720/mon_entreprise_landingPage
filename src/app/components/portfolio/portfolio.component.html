@@ -159,16 +159,21 @@
               </div>
             </div>
 
-            <!-- Lecteur vidéo principal -->
+            <!-- Lecteur vidéo principal (protégé) -->
             <div class="video-container mb-6 rounded-2xl overflow-hidden">
-              <video
-                #mainVideo
-                [src]="selectedVideo"
-                class="w-full aspect-video bg-black"
-                controls
-                preload="metadata">
-                Votre navigateur ne supporte pas la lecture de vidéos.
-              </video>
+              <div class="video-wrapper relative">
+                <video
+                  #mainVideo
+                  [src]="selectedVideo"
+                  class="w-full aspect-video bg-black"
+                  controls
+                  controlsList="nodownload noplaybackrate"
+                  disablePictureInPicture
+                  oncontextmenu="return false;"
+                  preload="metadata">
+                  Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+              </div>
             </div>
 
             <!-- Titre de la vidéo sélectionnée -->
