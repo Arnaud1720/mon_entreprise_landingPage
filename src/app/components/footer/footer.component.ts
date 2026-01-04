@@ -21,7 +21,7 @@ export class FooterComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('matrixCanvas', { static: false }) matrixCanvas!: ElementRef<HTMLCanvasElement>;
 
   currentYear = new Date().getFullYear();
-
+ //test
   // Particules de code flottantes
   codeParticles: CodeParticle[] = [];
 
