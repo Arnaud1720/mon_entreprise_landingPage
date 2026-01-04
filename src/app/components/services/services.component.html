@@ -11,7 +11,7 @@
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      <!-- Offre 1: WordPress -->
+      <!-- Offre 1: WordPress Sur Mesure -->
       <div class="service-card group"
            [class.animate-slide-in-left]="servicesVisible"
            [class.opacity-0]="!servicesVisible">
@@ -19,52 +19,61 @@
           🌐
         </div>
         <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
-          Sites WordPress Administrables
+          Sites WordPress Sur Mesure
         </h3>
         <p class="text-gray-600 mb-6">
-          Sites vitrines professionnels, entièrement administrables par vos soins grâce à WordPress et des blocs personnalisés.
+          Un site professionnel conçu spécialement pour vous, pas un simple thème acheté. Vous pourrez modifier vos textes et images vous-même, sans toucher au code.
         </p>
-        <ul class="space-y-3 mb-6">
+
+        <!-- Ce que vous obtenez (pour tous) -->
+        <p class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-3">Ce que vous obtenez</p>
+        <ul class="space-y-3 mb-4">
           <li class="flex items-start transform hover:translate-x-2 transition-transform">
             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
             </svg>
-            <span class="text-gray-700">Site vitrine (pack 5 pages standard)</span>
+            <span class="text-gray-700">Design unique créé pour votre activité</span>
           </li>
           <li class="flex items-start transform hover:translate-x-2 transition-transform">
             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
             </svg>
-            <span class="text-gray-700">WordPress avec blocs personnalisés (ACF Pro)</span>
+            <span class="text-gray-700">Interface simple pour modifier vos contenus</span>
           </li>
           <li class="flex items-start transform hover:translate-x-2 transition-transform">
             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
             </svg>
-            <span class="text-gray-700">Design 100% responsive (mobile, tablette, desktop)</span>
+            <span class="text-gray-700">Adapté mobile, tablette et ordinateur</span>
           </li>
           <li class="flex items-start transform hover:translate-x-2 transition-transform">
             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
             </svg>
-            <span class="text-gray-700">SEO technique de base (structure Hn, meta, sitemap)</span>
+            <span class="text-gray-700">Optimisé pour Google (SEO technique)</span>
           </li>
           <li class="flex items-start transform hover:translate-x-2 transition-transform">
             <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
             </svg>
-            <span class="text-gray-700">Formulaire de contact intégré</span>
-          </li>
-          <li class="flex items-start transform hover:translate-x-2 transition-transform">
-            <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-            </svg>
-            <span class="text-gray-700">Formation pour gérer vos contenus en autonomie</span>
+            <span class="text-gray-700">Formation incluse pour être autonome</span>
           </li>
         </ul>
+
+        <!-- Détails techniques (pour les connaisseurs) -->
+        <div class="bg-gray-50 rounded-lg p-3 mb-4">
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Côté technique</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Thème custom</span>
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">ACF Pro</span>
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Blocs réutilisables</span>
+            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">WooCommerce</span>
+          </div>
+        </div>
+
         <div class="border-t pt-4">
           <p class="text-xl font-bold text-blue-600">À partir de ~1 500 € HT</p>
-          <p class="text-sm text-gray-500">Pack site vitrine 5 pages</p>
+          <p class="text-sm text-gray-500">Site vitrine 5 pages • E-commerce sur devis</p>
         </div>
       </div>
 
@@ -212,11 +221,32 @@
               <span class="text-gray-700">Maintenance et mises à jour incluses*</span>
             </li>
           </ul>
-          <div class="border-t pt-4">
-            <p class="text-xl font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">
-              À partir de ~2 500 € HT
-            </p>
-            <p class="text-sm text-gray-500">*3 mois de maintenance inclus</p>
+          <!-- Deux offres de prix -->
+          <div class="border-t pt-4 space-y-4">
+            <!-- Option 1: Frontend Only -->
+            <div class="flex items-center justify-between p-3 bg-gradient-to-r from-gray-50 to-cyan-50 rounded-lg border border-cyan-200 hover:border-cyan-400 transition-all duration-300">
+              <div>
+                <p class="font-semibold text-gray-800">SPA Frontend seul</p>
+                <p class="text-xs text-gray-500">Angular 17+ sans backend</p>
+              </div>
+              <div class="text-right">
+                <p class="text-lg font-bold text-cyan-600">~1 500 € HT</p>
+              </div>
+            </div>
+
+            <!-- Option 2: Full Stack -->
+            <div class="flex items-center justify-between p-3 bg-gradient-to-r from-cyan-100 to-teal-100 rounded-lg border-2 border-cyan-500 hover:border-cyan-600 transition-all duration-300 relative">
+              <div class="absolute -top-2 left-3">
+                <span class="bg-gradient-to-r from-cyan-500 to-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">Recommandé</span>
+              </div>
+              <div class="mt-2">
+                <p class="font-semibold text-gray-800">Full Stack complet</p>
+                <p class="text-xs text-gray-500">Angular + Node.js + 3 mois maintenance</p>
+              </div>
+              <div class="text-right mt-2">
+                <p class="text-lg font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">~2 500 € HT</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
