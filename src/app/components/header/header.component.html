@@ -52,10 +52,13 @@
         >
           Contact
         </a>
+
+        <!-- Language Switcher -->
+        <app-language-switcher></app-language-switcher>
       </div>
 
       <!-- Mobile Menu Button avec animation -->
-      <div class="md:hidden">
+      <div class="md:hidden flex items-center gap-3">
         <button
           (click)="toggleMobileMenu()"
           class="text-gray-300 hover:text-white focus:outline-none transition-all duration-300 hover:scale-110"
@@ -112,6 +115,7 @@
         >
           Contact
         </a>
+
       </div>
     </div>
   </nav>
