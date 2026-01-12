@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 interface CodeParticle {
   x: number;
@@ -13,7 +14,7 @@ interface CodeParticle {
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })

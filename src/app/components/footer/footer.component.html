@@ -124,18 +124,23 @@
 
       <div class="border-t border-gray-700 pt-8">
         <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p class="mb-4 md:mb-0 text-center md:text-left">
-            © {{ currentYear }} NonoDevCo • TVA non applicable,
-            <a href="https://copeps.fr/actualites/exoneration-de-tva-art-293b-du-cgi/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="inline-flex items-center text-blue-400 hover:text-purple-400 transition-all duration-300 hover:underline decoration-2 underline-offset-2 group">
-              art. 293 B du CGI
-              <svg class="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-              </svg>
-            </a>
-          </p>
+          <div class="mb-4 md:mb-0 text-center md:text-left">
+            <p>
+              © {{ currentYear }} NonoDevCo • TVA non applicable,
+              <a href="https://copeps.fr/actualites/exoneration-de-tva-art-293b-du-cgi/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center text-blue-400 hover:text-purple-400 transition-all duration-300 hover:underline decoration-2 underline-offset-2 group">
+                art. 293 B du CGI
+                <svg class="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            </p>
+            <p class="mt-2">
+              <a routerLink="/cgv" class="text-gray-500 hover:text-blue-400 transition-colors duration-300">Conditions Generales de Vente</a>
+            </p>
+          </div>
 
           <!-- Indicateur "Made with code" animé -->
           <div class="flex items-center space-x-2 text-gray-500">

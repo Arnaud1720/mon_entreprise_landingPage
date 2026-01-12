@@ -1,0 +1,722 @@
+<!-- Header spacer for fixed navbar -->
+<div class="h-20"></div>
+
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white min-h-screen">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Conditions Generales de Vente
+      </h1>
+      <p class="text-gray-600">
+        Applicables a compter du {{ dateMiseAJour }}
+      </p>
+      <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+        <p class="text-sm text-blue-800">
+          <strong>Important :</strong> Toute commande de prestations implique l'acceptation sans reserve des presentes Conditions Generales de Vente.
+        </p>
+      </div>
+    </div>
+
+    <!-- Table des matieres -->
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-8 border border-gray-200">
+      <h2 class="text-lg font-bold text-gray-900 mb-4">Sommaire</h2>
+      <nav class="grid md:grid-cols-2 gap-2 text-sm">
+        <a href="#article-1" class="text-blue-600 hover:text-blue-800 hover:underline">Article 1 - Identification du prestataire</a>
+        <a href="#article-2" class="text-blue-600 hover:text-blue-800 hover:underline">Article 2 - Objet et champ d'application</a>
+        <a href="#article-3" class="text-blue-600 hover:text-blue-800 hover:underline">Article 3 - Definitions</a>
+        <a href="#article-4" class="text-blue-600 hover:text-blue-800 hover:underline">Article 4 - Devis et commande</a>
+        <a href="#article-5" class="text-blue-600 hover:text-blue-800 hover:underline">Article 5 - Prix et modalites de paiement</a>
+        <a href="#article-6" class="text-blue-600 hover:text-blue-800 hover:underline">Article 6 - Paiement echelonne et engagement</a>
+        <a href="#article-7" class="text-blue-600 hover:text-blue-800 hover:underline">Article 7 - Retard et defaut de paiement</a>
+        <a href="#article-8" class="text-blue-600 hover:text-blue-800 hover:underline">Article 8 - Delais d'execution</a>
+        <a href="#article-9" class="text-blue-600 hover:text-blue-800 hover:underline">Article 9 - Obligations du client</a>
+        <a href="#article-10" class="text-blue-600 hover:text-blue-800 hover:underline">Article 10 - Obligations du prestataire</a>
+        <a href="#article-11" class="text-blue-600 hover:text-blue-800 hover:underline">Article 11 - Recette et validation</a>
+        <a href="#article-12" class="text-blue-600 hover:text-blue-800 hover:underline">Article 12 - Propriete intellectuelle</a>
+        <a href="#article-13" class="text-blue-600 hover:text-blue-800 hover:underline">Article 13 - Confidentialite</a>
+        <a href="#article-14" class="text-blue-600 hover:text-blue-800 hover:underline">Article 14 - Protection des donnees</a>
+        <a href="#article-15" class="text-blue-600 hover:text-blue-800 hover:underline">Article 15 - Responsabilite et garanties</a>
+        <a href="#article-16" class="text-blue-600 hover:text-blue-800 hover:underline">Article 16 - Force majeure</a>
+        <a href="#article-17" class="text-blue-600 hover:text-blue-800 hover:underline">Article 17 - Resiliation</a>
+        <a href="#article-18" class="text-blue-600 hover:text-blue-800 hover:underline">Article 18 - Droit de retractation</a>
+        <a href="#article-19" class="text-blue-600 hover:text-blue-800 hover:underline">Article 19 - Litiges et droit applicable</a>
+        <a href="#article-20" class="text-blue-600 hover:text-blue-800 hover:underline">Article 20 - Dispositions diverses</a>
+      </nav>
+    </div>
+
+    <!-- Contenu des CGV -->
+    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 space-y-8">
+
+      <!-- Article 1 -->
+      <article id="article-1" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 1 - Identification du prestataire
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p><strong>Denomination :</strong> {{ entreprise.nom }}</p>
+          <p><strong>Statut juridique :</strong> {{ entreprise.statut }}</p>
+          <p><strong>SIRET :</strong> {{ entreprise.siret }}</p>
+          <p><strong>Siege social :</strong> {{ entreprise.adresse }}, {{ entreprise.codePostal }} {{ entreprise.ville }}</p>
+          <p *ngIf="entreprise.email"><strong>Email :</strong> {{ entreprise.email }}</p>
+          <p><strong>Telephone :</strong> {{ entreprise.telephone }}</p>
+          <p class="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200 text-sm">
+            <strong>TVA :</strong> TVA non applicable, article 293 B du Code General des Impots (regime de la franchise en base de TVA).
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article id="article-2" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 2 - Objet et champ d'application
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>2.1.</strong> Les presentes Conditions Generales de Vente (ci-apres "CGV") ont pour objet de definir les conditions dans lesquelles le Prestataire fournit ses services de developpement web, de creation d'applications, de sites internet et de solutions SaaS (Software as a Service) au Client.
+          </p>
+          <p>
+            <strong>2.2.</strong> Les presentes CGV s'appliquent a toutes les prestations de services conclues par le Prestataire aupres de ses Clients professionnels et particuliers, sauf conditions particulieres expressement convenues par ecrit.
+          </p>
+          <p>
+            <strong>2.3.</strong> Les presentes CGV prevalent sur tout autre document du Client, notamment ses conditions generales d'achat, sauf derogation expresse et ecrite du Prestataire.
+          </p>
+          <p>
+            <strong>2.4.</strong> Le fait pour le Client de passer commande implique l'adhesion entiere et sans reserve aux presentes CGV, a l'exclusion de tout autre document, et notamment les conditions generales d'achat du Client.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article id="article-3" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 3 - Definitions
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>"Prestataire" :</strong> designe {{ entreprise.nom }}, entrepreneur individuel identifie a l'article 1.</p>
+          <p><strong>"Client" :</strong> designe toute personne physique ou morale, professionnelle ou non, qui passe commande aupres du Prestataire.</p>
+          <p><strong>"Parties" :</strong> designe conjointement le Prestataire et le Client.</p>
+          <p><strong>"Prestations" :</strong> designe l'ensemble des services de developpement web, creation de sites internet, applications web, SaaS, API, maintenance et hebergement fournis par le Prestataire.</p>
+          <p><strong>"Livrables" :</strong> designe l'ensemble des elements produits par le Prestataire dans le cadre de l'execution des Prestations (code source, maquettes, documentation, etc.).</p>
+          <p><strong>"Devis" :</strong> designe le document contractuel detaillant les Prestations, leur prix et les conditions d'execution.</p>
+          <p><strong>"Cahier des charges" :</strong> designe le document decrivant les specifications fonctionnelles et techniques du projet.</p>
+          <p><strong>"Recette" :</strong> designe la phase de validation des Livrables par le Client.</p>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article id="article-4" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 4 - Devis et commande
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>4.1. Demande de devis :</strong> Le Client peut solliciter un devis gratuit et sans engagement aupres du Prestataire. Le devis est etabli sur la base des informations fournies par le Client.
+          </p>
+          <p>
+            <strong>4.2. Contenu du devis :</strong> Le devis precise :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>La description detaillee des Prestations</li>
+            <li>Le prix hors taxes (HT) et toutes taxes comprises (TTC)</li>
+            <li>Les delais previsionnels d'execution</li>
+            <li>Les modalites de paiement</li>
+            <li>La duree de validite du devis</li>
+            <li>Les eventuelles conditions particulieres</li>
+          </ul>
+          <p>
+            <strong>4.3. Validite du devis :</strong> Sauf mention contraire, le devis est valable trente (30) jours a compter de sa date d'emission. Passe ce delai, le Prestataire se reserve le droit de reviser ses tarifs.
+          </p>
+          <p>
+            <strong>4.4. Acceptation :</strong> La commande est consideree comme definitive apres :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Signature du devis par le Client (manuscrite ou electronique)</li>
+            <li>ET reception de l'acompte prevu a l'article 5</li>
+          </ul>
+          <p>
+            <strong>4.5. Modification de commande :</strong> Toute demande de modification apres acceptation du devis fera l'objet d'un avenant ecrit et pourra entrainer une revision du prix et des delais.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article id="article-5" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 5 - Prix et modalites de paiement
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>5.1. Prix :</strong> Les prix sont exprimes en euros et s'entendent hors taxes (HT). La TVA applicable est celle en vigueur au jour de la facturation. Les prix indiques sur le site sont des ordres de grandeur ; le prix definitif est celui figurant sur le devis accepte.
+          </p>
+          <p>
+            <strong>5.2. Paiement comptant :</strong> Pour tout paiement comptant, les modalites sont les suivantes :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li><strong>Acompte de 30%</strong> du montant total HT a la signature du devis</li>
+            <li><strong>40%</strong> a la livraison de la version beta ou de la maquette validee</li>
+            <li><strong>30%</strong> a la recette finale et mise en production</li>
+          </ul>
+          <p>
+            <strong>5.3. Moyens de paiement acceptes :</strong>
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Virement bancaire (RIB fourni sur la facture)</li>
+            <li>Carte bancaire via Stripe</li>
+            <li>Prelevement SEPA (pour les paiements echelonnes)</li>
+          </ul>
+          <p>
+            <strong>5.4. Facturation :</strong> Une facture est emise a chaque echeance de paiement. Les factures sont payables a reception, sauf mention contraire sur le devis.
+          </p>
+          <p>
+            <strong>5.5. Frais supplementaires :</strong> Tout travail supplementaire non prevu au devis initial (modifications, fonctionnalites additionnelles, etc.) fera l'objet d'une facturation complementaire au taux horaire de 70 euros HT/heure ou selon devis specifique.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 6 - ENGAGEMENT -->
+      <article id="article-6" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-red-500">
+          Article 6 - Paiement echelonne et engagement contractuel
+        </h2>
+        <div class="p-4 bg-red-50 rounded-lg border border-red-300 mb-4">
+          <p class="text-red-800 font-semibold">
+            Article essentiel - Lisez attentivement les conditions d'engagement
+          </p>
+        </div>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>6.1. Option de paiement echelonne :</strong> Le Prestataire propose une option de paiement echelonne sur douze (12) mois. Cette option constitue un <strong>echelonnement du prix total</strong> et non un abonnement ou une location.
+          </p>
+          <p>
+            <strong>6.2. Engagement ferme et definitif :</strong> Le choix du paiement echelonne emporte <strong>engagement ferme et irrevocable du Client pour la totalite de la duree de l'echeancier, soit douze (12) mois</strong>. Cet engagement est indissociable de la prestation commandee.
+          </p>
+          <p>
+            <strong>6.3. Nature de l'engagement :</strong> L'engagement porte sur le paiement de l'integralite du prix convenu, independamment de :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>La date de livraison effective du projet</li>
+            <li>L'utilisation ou la non-utilisation des Livrables par le Client</li>
+            <li>Tout changement de situation personnelle ou professionnelle du Client</li>
+            <li>Toute decision unilaterale du Client d'abandonner le projet</li>
+          </ul>
+          <p>
+            <strong>6.4. Prelevements automatiques :</strong> Les echeances mensuelles sont prelevees automatiquement par prelevement SEPA ou carte bancaire le meme jour chaque mois, a compter de la date de souscription.
+          </p>
+          <p>
+            <strong>6.5. Impossibilite de resiliation anticipee :</strong> <strong class="text-red-700">Le Client ne peut pas resilier l'echelonnement de maniere anticipee.</strong> Le Client reste redevable de l'integralite des echeances restantes jusqu'au terme des 12 mois, meme en cas de :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Demande de resiliation anticipee</li>
+            <li>Cessation d'activite du Client</li>
+            <li>Non-utilisation du produit livre</li>
+            <li>Insatisfaction non fondee sur un manquement du Prestataire</li>
+          </ul>
+          <p>
+            <strong>6.6. Defaut de paiement d'une echeance :</strong> En cas de defaut de paiement d'une echeance :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Le Prestataire adressera une mise en demeure par email avec accuse de reception</li>
+            <li>A defaut de regularisation sous 15 jours, <strong>l'integralite des sommes restant dues devient immediatement exigible</strong></li>
+            <li>Des penalites de retard seront appliquees conformement a l'article 7</li>
+            <li>Le Prestataire pourra suspendre l'hebergement et la maintenance le cas echeant</li>
+          </ul>
+          <p>
+            <strong>6.7. Justification economique :</strong> L'engagement de 12 mois se justifie par le fait que le Prestataire engage des ressources et investissements significatifs des le debut du projet (temps de developpement, outils, infrastructure) et doit securiser le paiement de son travail.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 7 -->
+      <article id="article-7" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 7 - Retard et defaut de paiement
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>7.1. Penalites de retard :</strong> Conformement aux articles L.441-10 et suivants du Code de commerce, tout retard de paiement entraine de plein droit et sans formalite prealable :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>L'application de penalites de retard au taux de <strong>trois fois le taux d'interet legal</strong> en vigueur, calculees sur le montant TTC de la somme due</li>
+            <li>Une <strong>indemnite forfaitaire pour frais de recouvrement de 40 euros</strong> (article D.441-5 du Code de commerce)</li>
+          </ul>
+          <p>
+            <strong>7.2. Frais de recouvrement :</strong> Si les frais de recouvrement exposes sont superieurs a l'indemnite forfaitaire, le Prestataire peut demander une indemnisation complementaire sur justificatifs (frais d'avocat, huissier, societe de recouvrement, etc.).
+          </p>
+          <p>
+            <strong>7.3. Suspension des prestations :</strong> En cas de retard de paiement superieur a 15 jours, le Prestataire se reserve le droit de :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Suspendre l'execution des prestations en cours</li>
+            <li>Suspendre l'acces aux services d'hebergement et maintenance</li>
+            <li>Exiger le paiement comptant de toute nouvelle commande</li>
+          </ul>
+          <p>
+            <strong>7.4. Exigibilite anticipee :</strong> Tout incident de paiement rend immediatement exigible l'ensemble des sommes dues au titre du contrat, meme non encore echues.
+          </p>
+          <p>
+            <strong>7.5. Clause de reserve de propriete :</strong> Le Prestataire conserve la propriete pleine et entiere des Livrables jusqu'au paiement integral du prix. Le transfert de propriete n'intervient qu'apres encaissement effectif de l'integralite des sommes dues.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 8 -->
+      <article id="article-8" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 8 - Delais d'execution
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>8.1. Delais indicatifs :</strong> Les delais d'execution mentionnes dans le devis sont donnes a titre indicatif et ne constituent pas un engagement ferme, sauf mention expresse contraire.
+          </p>
+          <p>
+            <strong>8.2. Point de depart :</strong> Les delais courent a compter de la reception cumulative de :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>L'acompte initial prevu au devis</li>
+            <li>L'ensemble des elements necessaires a l'execution (contenus, acces, specifications, etc.)</li>
+            <li>La validation du cahier des charges par le Client</li>
+          </ul>
+          <p>
+            <strong>8.3. Prolongation des delais :</strong> Les delais sont prolonges de plein droit en cas de :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Retard du Client dans la fourniture des elements necessaires</li>
+            <li>Modifications demandees par le Client en cours de projet</li>
+            <li>Nombre excessif d'iterations de validation</li>
+            <li>Force majeure telle que definie a l'article 16</li>
+          </ul>
+          <p>
+            <strong>8.4. Retard du Client :</strong> Tout retard imputable au Client dans la fourniture des elements ou dans les validations entrainera un report equivalent des delais, sans que le Prestataire puisse etre tenu responsable.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 9 -->
+      <article id="article-9" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 9 - Obligations du client
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>9.1. Le Client s'engage a :</strong></p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Fournir des informations exactes :</strong> Communiquer toutes les informations necessaires a la bonne execution des prestations, de maniere complete, exacte et dans les delais convenus.
+            </li>
+            <li>
+              <strong>Designer un interlocuteur :</strong> Nommer un interlocuteur unique habilite a prendre les decisions relatives au projet et a valider les livrables.
+            </li>
+            <li>
+              <strong>Collaborer activement :</strong> Participer aux reunions de suivi, repondre aux sollicitations du Prestataire dans un delai raisonnable (maximum 5 jours ouvres).
+            </li>
+            <li>
+              <strong>Valider les livrables :</strong> Proceder a la recette des livrables dans les delais prevus et formuler ses remarques de maniere claire et exhaustive.
+            </li>
+            <li>
+              <strong>Respecter les droits de tiers :</strong> Garantir qu'il dispose de tous les droits sur les contenus fournis (textes, images, logos, etc.) et qu'ils ne portent pas atteinte aux droits de tiers.
+            </li>
+            <li>
+              <strong>Payer les prestations :</strong> Regler les factures dans les delais convenus.
+            </li>
+            <li>
+              <strong>Respecter la legislation :</strong> S'assurer que l'utilisation des Livrables est conforme a la legislation en vigueur (RGPD, droit de la consommation, etc.).
+            </li>
+          </ul>
+          <p>
+            <strong>9.2. Consequences du manquement :</strong> Tout manquement du Client a ses obligations pourra entrainer la suspension des prestations et/ou des frais supplementaires, sans prejudice de tout dommage et interet.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 10 -->
+      <article id="article-10" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 10 - Obligations du prestataire
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>10.1. Le Prestataire s'engage a :</strong></p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Obligation de moyens :</strong> Mettre en oeuvre tous les moyens necessaires a la bonne execution des prestations, conformement aux regles de l'art et aux standards de la profession.
+            </li>
+            <li>
+              <strong>Devoir de conseil :</strong> Informer le Client des contraintes techniques, des risques eventuels et lui proposer les solutions les plus adaptees a ses besoins.
+            </li>
+            <li>
+              <strong>Respect du cahier des charges :</strong> Realiser les prestations conformement aux specifications validees.
+            </li>
+            <li>
+              <strong>Qualite :</strong> Livrer des produits fonctionnels, testes et conformes aux bonnes pratiques de developpement.
+            </li>
+            <li>
+              <strong>Communication :</strong> Tenir le Client informe de l'avancement du projet et l'alerter de toute difficulte.
+            </li>
+            <li>
+              <strong>Confidentialite :</strong> Respecter la confidentialite des informations communiquees par le Client.
+            </li>
+          </ul>
+          <p>
+            <strong>10.2. Exclusions :</strong> Le Prestataire ne peut etre tenu responsable des dysfonctionnements lies a :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Des elements fournis par le Client ou des tiers</li>
+            <li>Des modifications apportees aux Livrables par le Client ou un tiers</li>
+            <li>Un environnement technique non conforme aux prerequis</li>
+            <li>Des services tiers (hebergement, API externes, etc.)</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Article 11 -->
+      <article id="article-11" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 11 - Recette et validation
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>11.1. Livraison :</strong> Les Livrables sont mis a disposition du Client selon les modalites prevues au devis (acces a un environnement de test, livraison des fichiers, mise en production, etc.).
+          </p>
+          <p>
+            <strong>11.2. Delai de recette :</strong> Le Client dispose d'un delai de <strong>sept (7) jours ouvres</strong> a compter de la livraison pour proceder a la recette et notifier par ecrit ses eventuelles reserves.
+          </p>
+          <p>
+            <strong>11.3. Reserves :</strong> Les reserves doivent etre :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Formulees par ecrit (email avec accuse de reception ou courrier)</li>
+            <li>Precises, detaillees et reproductibles</li>
+            <li>Relatives a des non-conformites par rapport au cahier des charges</li>
+          </ul>
+          <p>
+            <strong>11.4. Acceptation tacite :</strong> A defaut de notification de reserves dans le delai imparti, les Livrables sont reputes acceptes sans reserve. Il en est de meme si le Client met en production les Livrables.
+          </p>
+          <p>
+            <strong>11.5. Correction des anomalies :</strong> Les anomalies bloquantes (empechant l'utilisation normale) seront corrigees dans les plus brefs delais. Les anomalies mineures seront integrees dans les mises a jour suivantes.
+          </p>
+          <p>
+            <strong>11.6. Validation finale :</strong> La validation finale par le Client entraine l'extinction de toute reclamation relative a la conformite des Livrables au cahier des charges.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 12 -->
+      <article id="article-12" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 12 - Propriete intellectuelle
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>12.1. Propriete des Livrables :</strong> Sous reserve du paiement integral du prix, le Prestataire cede au Client les droits patrimoniaux sur les Livrables specifiquement crees pour le projet, et notamment :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Le droit de reproduction sur tout support</li>
+            <li>Le droit de representation</li>
+            <li>Le droit d'adaptation et de modification</li>
+            <li>Le droit d'exploitation commerciale</li>
+          </ul>
+          <p>
+            <strong>12.2. Etendue de la cession :</strong> La cession est consentie pour le monde entier et pour toute la duree legale des droits d'auteur.
+          </p>
+          <p>
+            <strong>12.3. Exclusions de la cession :</strong> Sont exclus de la cession et restent la propriete du Prestataire :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Les outils, frameworks, bibliotheques et composants reutilisables developpes par le Prestataire anterieurement ou independamment du projet</li>
+            <li>Les methodes, savoir-faire et processus du Prestataire</li>
+            <li>Les composants open source utilises (soumis a leurs licences respectives)</li>
+          </ul>
+          <p>
+            <strong>12.4. Droit de reference :</strong> Sauf opposition expresse et ecrite du Client, le Prestataire est autorise a mentionner la realisation dans ses references commerciales et a reproduire des captures d'ecran a des fins de promotion.
+          </p>
+          <p>
+            <strong>12.5. Elements fournis par le Client :</strong> Le Client reste proprietaire des elements qu'il fournit (textes, images, logos, etc.) et garantit disposer de tous les droits necessaires a leur utilisation.
+          </p>
+          <p>
+            <strong>12.6. Condition suspensive :</strong> <strong>Le transfert de propriete des Livrables n'intervient qu'apres paiement integral du prix.</strong> En cas de defaut de paiement, le Prestataire conserve tous les droits sur les Livrables.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 13 -->
+      <article id="article-13" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 13 - Confidentialite
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>13.1. Definition :</strong> Sont considerees comme confidentielles toutes les informations, donnees, documents, de quelque nature que ce soit, communiques entre les Parties dans le cadre de l'execution du contrat.
+          </p>
+          <p>
+            <strong>13.2. Engagement :</strong> Chaque Partie s'engage a :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Traiter les informations confidentielles avec le meme degre de protection que ses propres informations confidentielles</li>
+            <li>Ne pas divulguer ces informations a des tiers sans autorisation prealable ecrite</li>
+            <li>N'utiliser ces informations que pour les besoins de l'execution du contrat</li>
+            <li>Limiter l'acces aux informations aux seules personnes ayant besoin d'en connaitre</li>
+          </ul>
+          <p>
+            <strong>13.3. Exceptions :</strong> Ne sont pas considerees comme confidentielles les informations :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Deja connues du public</li>
+            <li>Obtenues legalement d'un tiers non tenu a confidentialite</li>
+            <li>Developpees independamment par la Partie receptrice</li>
+            <li>Dont la divulgation est exigee par la loi ou une autorite competente</li>
+          </ul>
+          <p>
+            <strong>13.4. Duree :</strong> L'obligation de confidentialite perdure pendant toute la duree du contrat et pendant une periode de <strong>trois (3) ans</strong> apres son terme.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 14 -->
+      <article id="article-14" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 14 - Protection des donnees personnelles
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>14.1. Responsable de traitement :</strong> Le Prestataire agit en qualite de sous-traitant au sens du RGPD pour les traitements de donnees personnelles realises pour le compte du Client dans le cadre des prestations.
+          </p>
+          <p>
+            <strong>14.2. Engagements du Prestataire :</strong> Conformement a l'article 28 du Reglement (UE) 2016/679 (RGPD), le Prestataire s'engage a :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Traiter les donnees uniquement sur instruction documentee du Client</li>
+            <li>Garantir la confidentialite des donnees traitees</li>
+            <li>Veiller a ce que les personnes autorisees a traiter les donnees s'engagent a respecter la confidentialite</li>
+            <li>Prendre toutes les mesures de securite requises par l'article 32 du RGPD</li>
+            <li>Respecter les conditions de recours a un sous-traitant ulterieur</li>
+            <li>Aider le Client a garantir le respect des obligations des articles 32 a 36 du RGPD</li>
+            <li>Supprimer ou restituer les donnees au terme du contrat, selon le choix du Client</li>
+            <li>Mettre a disposition du Client toutes les informations necessaires pour demontrer le respect de ses obligations</li>
+          </ul>
+          <p>
+            <strong>14.3. Donnees du Client :</strong> Le Prestataire collecte et traite les donnees du Client (identite, coordonnees, donnees de facturation) en tant que responsable de traitement, pour les finalites suivantes :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Gestion de la relation commerciale</li>
+            <li>Execution des prestations</li>
+            <li>Facturation et comptabilite</li>
+            <li>Prospection commerciale (sauf opposition)</li>
+          </ul>
+          <p>
+            <strong>14.4. Droits des personnes :</strong> Conformement a la loi Informatique et Libertes et au RGPD, le Client dispose d'un droit d'acces, de rectification, d'effacement, de limitation, de portabilite et d'opposition sur ses donnees. Ces droits s'exercent par email a : {{ entreprise.email }}
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 15 -->
+      <article id="article-15" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 15 - Responsabilite et garanties
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>15.1. Obligation de moyens :</strong> Le Prestataire est tenu a une obligation de moyens. Il s'engage a apporter tout le soin et la diligence necessaires a l'execution des prestations conformement aux regles de l'art.
+          </p>
+          <p>
+            <strong>15.2. Garantie de conformite :</strong> Le Prestataire garantit la conformite des Livrables au cahier des charges valide pendant une periode de <strong>trois (3) mois</strong> a compter de la recette finale. Cette garantie couvre la correction des anomalies bloquantes.
+          </p>
+          <p>
+            <strong>15.3. Exclusions de garantie :</strong> La garantie ne couvre pas :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Les anomalies resultant d'une mauvaise utilisation ou d'une utilisation non conforme</li>
+            <li>Les modifications apportees par le Client ou un tiers non autorise</li>
+            <li>Les dysfonctionnements lies a l'environnement technique du Client</li>
+            <li>Les evolutions demandees posterieurement a la recette</li>
+            <li>Les dysfonctionnements lies a des services tiers</li>
+          </ul>
+          <p>
+            <strong>15.4. Limitation de responsabilite :</strong> <strong>La responsabilite du Prestataire est limitee au montant des sommes effectivement percues au titre du contrat concerne.</strong> En aucun cas le Prestataire ne pourra etre tenu responsable des dommages indirects tels que :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Perte de chiffre d'affaires ou de benefices</li>
+            <li>Perte de donnees</li>
+            <li>Perte de clientele</li>
+            <li>Atteinte a l'image ou a la reputation</li>
+            <li>Prejudice commercial</li>
+          </ul>
+          <p>
+            <strong>15.5. Garantie du Client :</strong> Le Client garantit le Prestataire contre toute reclamation de tiers relative aux contenus fournis par le Client et a l'utilisation des Livrables.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 16 -->
+      <article id="article-16" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 16 - Force majeure
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>16.1. Definition :</strong> Sont consideres comme cas de force majeure ou cas fortuit, outre ceux habituellement retenus par la jurisprudence des cours et tribunaux francais : les greves, les pannes informatiques majeures, les attaques informatiques (cyberattaques, virus), les catastrophes naturelles, les epidemies, les guerres, les actes de terrorisme, les decisions gouvernementales ou administratives.
+          </p>
+          <p>
+            <strong>16.2. Effets :</strong> La survenance d'un cas de force majeure suspend l'execution des obligations de la Partie affectee pendant la duree de l'evenement, sans que cette suspension puisse etre consideree comme une faute.
+          </p>
+          <p>
+            <strong>16.3. Information :</strong> La Partie invoquant la force majeure doit en informer l'autre Partie dans les plus brefs delais par tout moyen ecrit.
+          </p>
+          <p>
+            <strong>16.4. Duree prolongee :</strong> Si la force majeure se prolonge au-dela de <strong>trois (3) mois</strong>, chaque Partie pourra resilier le contrat sans indemnite, par lettre recommandee avec accuse de reception.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 17 -->
+      <article id="article-17" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 17 - Resiliation
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>17.1. Resiliation pour manquement grave :</strong> En cas de manquement grave de l'une des Parties a ses obligations contractuelles, non repare dans un delai de quinze (15) jours suivant une mise en demeure restee infructueuse, l'autre Partie pourra resilier le contrat de plein droit par lettre recommandee avec accuse de reception.
+          </p>
+          <p>
+            <strong>17.2. Sont consideres comme manquements graves :</strong>
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Le defaut de paiement de toute somme due</li>
+            <li>La violation des obligations de confidentialite</li>
+            <li>L'atteinte aux droits de propriete intellectuelle</li>
+            <li>La fourniture d'informations fausses ou trompeuses</li>
+          </ul>
+          <p>
+            <strong>17.3. Consequences de la resiliation pour faute du Client :</strong>
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Les sommes deja versees restent acquises au Prestataire</li>
+            <li>Les sommes restant dues deviennent immediatement exigibles</li>
+            <li>Le Prestataire conserve la propriete des Livrables non integralement payes</li>
+            <li>Le Prestataire peut reclamer des dommages et interets</li>
+          </ul>
+          <p>
+            <strong>17.4. Resiliation anticipee a l'initiative du Client (paiement comptant) :</strong> En cas de resiliation anticipee a l'initiative du Client pour un projet en paiement comptant :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Les sommes versees restent acquises au Prestataire</li>
+            <li>Les travaux realises sont factures au prorata du temps passe</li>
+            <li>Une indemnite de resiliation de 30% du solde restant du est due</li>
+          </ul>
+          <p>
+            <strong>17.5. Cas du paiement echelonne :</strong> <strong class="text-red-700">En cas de paiement echelonne, le Client ne peut pas resilier de maniere anticipee (voir article 6).</strong> Seule la resiliation pour faute du Prestataire permet au Client de mettre fin au contrat.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 18 -->
+      <article id="article-18" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 18 - Droit de retractation
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>18.1. Clients professionnels :</strong> Les clients professionnels (agissant dans le cadre de leur activite professionnelle) ne beneficient pas du droit de retractation.
+          </p>
+          <p>
+            <strong>18.2. Clients particuliers :</strong> Conformement aux articles L.221-18 et suivants du Code de la consommation, le Client consommateur (personne physique agissant a des fins non professionnelles) dispose d'un delai de <strong>quatorze (14) jours</strong> pour exercer son droit de retractation, sans avoir a motiver sa decision.
+          </p>
+          <p>
+            <strong>18.3. Point de depart :</strong> Le delai de retractation court a compter du jour de l'acceptation du devis.
+          </p>
+          <p>
+            <strong>18.4. Modalites d'exercice :</strong> Pour exercer son droit de retractation, le Client doit notifier sa decision au Prestataire par une declaration claire et non equivoque (courrier postal ou email) a l'adresse : {{ entreprise.email }}
+          </p>
+          <p>
+            <strong>18.5. Renonciation au droit de retractation :</strong> Conformement a l'article L.221-28 du Code de la consommation, le droit de retractation ne peut etre exerce pour les prestations de services pleinement executees avant la fin du delai de retractation si l'execution a commence apres accord prealable expres du consommateur et renoncement expres a son droit de retractation.
+          </p>
+          <p class="p-3 bg-yellow-50 rounded-lg border border-yellow-300">
+            <strong>Important :</strong> En signant le devis et en demandant le demarrage immediat des travaux, le Client particulier reconnait expressement renoncer a son droit de retractation pour les prestations executees.
+          </p>
+          <p>
+            <strong>18.6. Remboursement :</strong> En cas de retractation valide, le Prestataire remboursera les sommes versees sous 14 jours, deduction faite de la valeur des prestations deja executees.
+          </p>
+        </div>
+      </article>
+
+      <!-- Article 19 -->
+      <article id="article-19" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 19 - Litiges et droit applicable
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>19.1. Droit applicable :</strong> Les presentes CGV et les relations contractuelles entre le Prestataire et le Client sont regies par le droit francais.
+          </p>
+          <p>
+            <strong>19.2. Reglement amiable :</strong> En cas de litige, les Parties s'engagent a rechercher une solution amiable avant toute action judiciaire. A cet effet, la Partie la plus diligente adressera une reclamation ecrite a l'autre Partie. Les Parties disposeront d'un delai de trente (30) jours pour trouver un accord.
+          </p>
+          <p>
+            <strong>19.3. Mediation (clients consommateurs) :</strong> Conformement aux articles L.612-1 et suivants du Code de la consommation, le Client consommateur peut recourir gratuitement a un mediateur de la consommation en vue de la resolution amiable d'un litige. Le mediateur competent est : <strong>[A completer avec les coordonnees du mediateur]</strong>
+          </p>
+          <p>
+            <strong>19.4. Plateforme europeenne :</strong> Le Client consommateur peut egalement utiliser la plateforme de reglement en ligne des litiges de la Commission europeenne accessible a l'adresse : https://ec.europa.eu/consumers/odr
+          </p>
+          <p>
+            <strong>19.5. Competence juridictionnelle :</strong>
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li><strong>Clients professionnels :</strong> En cas d'echec de la tentative de reglement amiable, tout litige sera soumis a la competence exclusive des tribunaux du ressort de la Cour d'appel de Douai (France).</li>
+            <li><strong>Clients consommateurs :</strong> Le Client consommateur peut saisir soit les tribunaux du lieu de son domicile, soit les tribunaux du lieu du siege social du Prestataire.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Article 20 -->
+      <article id="article-20" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          Article 20 - Dispositions diverses
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>20.1. Integralite :</strong> Les presentes CGV et le devis accepte constituent l'integralite de l'accord entre les Parties et remplacent tous les accords anterieurs, ecrits ou verbaux, relatifs a leur objet.
+          </p>
+          <p>
+            <strong>20.2. Modification :</strong> Le Prestataire se reserve le droit de modifier les presentes CGV a tout moment. Les CGV applicables sont celles en vigueur a la date de la commande.
+          </p>
+          <p>
+            <strong>20.3. Nullite partielle :</strong> Si une ou plusieurs stipulations des presentes CGV etaient declarees nulles ou inapplicables, les autres stipulations conserveraient leur pleine force et portee.
+          </p>
+          <p>
+            <strong>20.4. Tolerance :</strong> Le fait pour l'une des Parties de ne pas se prevaloir d'un manquement de l'autre Partie a l'une quelconque des stipulations des presentes CGV ne saurait etre interprete comme une renonciation a se prevaloir de ce manquement.
+          </p>
+          <p>
+            <strong>20.5. Cession :</strong> Le Client ne peut ceder le contrat ou les droits et obligations en decoulant sans l'accord prealable ecrit du Prestataire.
+          </p>
+          <p>
+            <strong>20.6. Titres :</strong> Les titres des articles n'ont qu'une valeur indicative et ne sauraient affecter l'interpretation des presentes CGV.
+          </p>
+          <p>
+            <strong>20.7. Election de domicile :</strong> Les Parties font election de domicile a leur adresse respective indiquee au devis ou, a defaut, pour le Prestataire, a l'adresse mentionnee a l'article 1.
+          </p>
+        </div>
+      </article>
+
+      <!-- Signature -->
+      <div class="mt-12 pt-8 border-t-2 border-gray-200">
+        <p class="text-center text-gray-600 text-sm">
+          Conditions Generales de Vente - Version du {{ dateMiseAJour }}
+        </p>
+        <p class="text-center text-gray-500 text-xs mt-2">
+          {{ entreprise.nom }} - {{ entreprise.statut }} - SIRET {{ entreprise.siret }}
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bouton retour -->
+    <div class="mt-8 text-center">
+      <a routerLink="/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Retour a l'accueil
+      </a>
+    </div>
+
+  </div>
+</section>

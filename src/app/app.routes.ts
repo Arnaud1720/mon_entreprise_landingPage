@@ -10,6 +10,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/saas/saas.component').then(m => m.SaasComponent)
   },
   {
+    path: 'cgv',
+    loadComponent: () => import('./pages/cgv/cgv.component').then(m => m.CgvComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

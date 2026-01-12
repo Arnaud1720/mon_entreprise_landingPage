@@ -1,0 +1,18 @@
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Article styling */
+article {
+  scroll-margin-top: 6rem;
+}
+
+/* Table of contents hover effect */
+nav a {
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  padding-left: 0.5rem;
+}
