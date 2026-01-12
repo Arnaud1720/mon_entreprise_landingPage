@@ -10,7 +10,7 @@
       <p class="section-subtitle">Des solutions adaptées à vos besoins</p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
       <!-- Offre 1: WordPress Sur Mesure -->
       <div class="service-card group"
            [class.animate-slide-in-left]="servicesVisible"
@@ -250,6 +250,128 @@
           </div>
         </div>
       </div>
+
+      <!-- Offre 4: SaaS Sur Mesure -->
+      <div class="service-card group border-2 border-amber-500 relative overflow-hidden"
+           [class.animate-slide-in-right]="servicesVisible"
+           [class.opacity-0]="!servicesVisible"
+           style="animation-delay: 0.6s">
+        <div class="absolute top-4 right-4 z-20">
+          <span class="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse-slow">
+            Clé en main
+          </span>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="relative z-10">
+          <div class="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+            🚀
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-amber-600 transition-colors">
+            SaaS Sur Mesure
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Vous avez une idée de plateforme ? Je crée votre SaaS de A à Z : marketplace, outil métier, application de réservation...
+          </p>
+
+          <!-- Référence client -->
+          <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg p-3 mb-4 border border-amber-200">
+            <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-1">Exemple réalisé</p>
+            <a href="https://unptitcoupdemain.com" target="_blank" rel="noopener" class="text-amber-600 hover:text-amber-800 font-medium text-sm flex items-center gap-1 transition-colors">
+              Un P'tit Coup de Main
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+            <p class="text-xs text-gray-500 mt-1">Marketplace services à domicile</p>
+          </div>
+
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Gestion multi-utilisateurs (admin, clients, pros)</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Système de réservation / commande</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Paiement en ligne (Stripe / WooCommerce)</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Dashboard personnalisé & facturation PDF</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Chat intégré & notifications email</span>
+            </li>
+            <li class="flex items-start transform hover:translate-x-2 transition-transform">
+              <svg class="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-gray-700">Déploiement & formation inclus</span>
+            </li>
+          </ul>
+
+          <!-- Trois offres de prix -->
+          <div class="border-t pt-4 space-y-3">
+            <!-- MVP Starter -->
+            <div class="flex items-center justify-between p-2 bg-gradient-to-r from-gray-50 to-amber-50 rounded-lg border border-amber-200 hover:border-amber-400 transition-all duration-300">
+              <div>
+                <p class="font-semibold text-gray-800 text-sm">MVP Starter</p>
+                <p class="text-xs text-gray-500">Fonctionnalités essentielles</p>
+              </div>
+              <div class="text-right">
+                <p class="text-base font-bold text-amber-600">~5 000 € HT</p>
+              </div>
+            </div>
+
+            <!-- SaaS Complet -->
+            <div class="flex items-center justify-between p-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-lg border-2 border-amber-500 hover:border-amber-600 transition-all duration-300 relative">
+              <div class="absolute -top-2 left-3">
+                <span class="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">Populaire</span>
+              </div>
+              <div class="mt-2">
+                <p class="font-semibold text-gray-800 text-sm">SaaS Complet</p>
+                <p class="text-xs text-gray-500">Toutes fonctionnalités + maintenance</p>
+              </div>
+              <div class="text-right mt-2">
+                <p class="text-base font-bold bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">~12 000 € HT</p>
+              </div>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="flex items-center justify-between p-2 bg-gradient-to-r from-gray-50 to-orange-50 rounded-lg border border-orange-200 hover:border-orange-400 transition-all duration-300">
+              <div>
+                <p class="font-semibold text-gray-800 text-sm">Enterprise</p>
+                <p class="text-xs text-gray-500">Multi-agences, personnalisation avancée</p>
+              </div>
+              <div class="text-right">
+                <p class="text-base font-bold text-orange-600">Sur devis</p>
+              </div>
+            </div>
+
+            <!-- Bouton En savoir plus -->
+            <a routerLink="/saas" class="block w-full mt-4 py-3 px-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-center font-bold rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              En savoir plus
+              <svg class="w-4 h-4 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Section Maintenance -->
@@ -263,7 +385,7 @@
           Pour assurer la pérennité de votre solution, je propose des services de maintenance et d'accompagnement.
         </p>
       </div>
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
         <div class="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
           <h4 class="text-xl font-bold text-gray-900 mb-3">Maintenance WordPress</h4>
           <ul class="text-left space-y-2 text-gray-600">
@@ -324,6 +446,27 @@
             <li class="flex items-center">
               <span class="text-cyan-600 mr-2">✓</span>
               Support technique prioritaire
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-white to-amber-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+          <h4 class="text-xl font-bold text-gray-900 mb-3">Maintenance SaaS</h4>
+          <ul class="text-left space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <span class="text-amber-600 mr-2">✓</span>
+              Monitoring et uptime 24/7
+            </li>
+            <li class="flex items-center">
+              <span class="text-amber-600 mr-2">✓</span>
+              Nouvelles fonctionnalités sur demande
+            </li>
+            <li class="flex items-center">
+              <span class="text-amber-600 mr-2">✓</span>
+              Corrections de bugs prioritaires
+            </li>
+            <li class="flex items-center">
+              <span class="text-amber-600 mr-2">✓</span>
+              Sauvegardes et sécurité renforcée
             </li>
           </ul>
         </div>

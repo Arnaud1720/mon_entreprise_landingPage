@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { SeoService } from '../../services/seo.service';
+
+@Component({
+  selector: 'app-saas',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  templateUrl: './saas.component.html',
+  styleUrls: ['./saas.component.css']
+})
+export class SaasComponent implements OnInit {
+
+  constructor(private seoService: SeoService) {}
+
+  ngOnInit() {
+    this.seoService.updateMetaTags({
+      title: 'Développement SaaS Sur Mesure | Arnaud Derisbourg - Développeur Freelance',
+      description: 'Création de SaaS personnalisés : marketplaces, outils métiers, applications de réservation. Stack WordPress ou Java/Angular/Spring Boot. Devis gratuit.',
+      keywords: 'développement saas, créer saas, saas sur mesure, marketplace, application métier, java spring boot, angular, wordpress custom, développeur saas freelance',
+      author: 'Arnaud Derisbourg',
+      type: 'website',
+      url: 'https://votresite.com/saas',
+      image: 'https://votresite.com/assets/og-image-saas.jpg'
+    });
+  }
+
+  scrollToContact() {
+    // Navigate to home and scroll to contact
+    window.location.href = '/#contact';
+  }
+}
