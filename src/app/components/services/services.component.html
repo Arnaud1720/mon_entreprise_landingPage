@@ -324,47 +324,66 @@
             </li>
           </ul>
 
-          <!-- Trois offres de prix -->
+          <!-- Tarification basée sur la complexité -->
           <div class="border-t pt-4 space-y-3">
-            <!-- MVP Starter -->
-            <div class="flex items-center justify-between p-2 bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg border border-blue-200 hover:border-blue-400 transition-all duration-300">
+            <!-- Starter -->
+            <div class="flex items-center justify-between p-2 bg-gradient-to-r from-gray-50 to-green-50 rounded-lg border border-green-200 hover:border-green-400 transition-all duration-300">
               <div>
-                <p class="font-semibold text-gray-800 text-sm">MVP Starter</p>
-                <p class="text-xs text-gray-500">Fonctionnalités essentielles</p>
+                <p class="font-semibold text-gray-800 text-sm">Starter</p>
+                <p class="text-xs text-gray-500">Projet simple</p>
               </div>
               <div class="text-right">
-                <p class="text-base font-bold text-blue-600">~5 000 € HT</p>
+                <p class="text-base font-bold text-green-600">3 500 € HT</p>
+                <p class="text-xs text-gray-400">ou 350 €/mois</p>
               </div>
             </div>
 
-            <!-- SaaS Complet -->
+            <!-- Pro -->
             <div class="flex items-center justify-between p-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg border-2 border-purple-500 hover:border-purple-600 transition-all duration-300 relative">
               <div class="absolute -top-2 left-3">
                 <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">Populaire</span>
               </div>
               <div class="mt-2">
-                <p class="font-semibold text-gray-800 text-sm">SaaS Complet</p>
-                <p class="text-xs text-gray-500">Toutes fonctionnalités + maintenance</p>
+                <p class="font-semibold text-gray-800 text-sm">Pro</p>
+                <p class="text-xs text-gray-500">Projet complet</p>
               </div>
               <div class="text-right mt-2">
-                <p class="text-base font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">~12 000 € HT</p>
+                <p class="text-base font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">8 000 € HT</p>
+                <p class="text-xs text-gray-400">ou 700 €/mois</p>
+              </div>
+            </div>
+
+            <!-- Business -->
+            <div class="flex items-center justify-between p-2 bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg border border-blue-200 hover:border-blue-400 transition-all duration-300">
+              <div>
+                <p class="font-semibold text-gray-800 text-sm">Business</p>
+                <p class="text-xs text-gray-500">Projet avancé</p>
+              </div>
+              <div class="text-right">
+                <p class="text-base font-bold text-blue-600">15 000 € HT</p>
+                <p class="text-xs text-gray-400">ou 1 300 €/mois</p>
               </div>
             </div>
 
             <!-- Enterprise -->
-            <div class="flex items-center justify-between p-2 bg-gradient-to-r from-gray-50 to-purple-50 rounded-lg border border-purple-200 hover:border-purple-400 transition-all duration-300">
+            <div class="flex items-center justify-between p-2 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-300 hover:border-gray-400 transition-all duration-300">
               <div>
                 <p class="font-semibold text-gray-800 text-sm">Enterprise</p>
-                <p class="text-xs text-gray-500">Multi-agences, personnalisation avancée</p>
+                <p class="text-xs text-gray-500">Projets sur mesure</p>
               </div>
               <div class="text-right">
-                <p class="text-base font-bold text-purple-600">Sur devis</p>
+                <p class="text-base font-bold text-gray-700">Sur devis</p>
               </div>
             </div>
 
+            <!-- Note importante -->
+            <p class="text-xs text-gray-500 text-center pt-2">
+              Prix indicatifs - Devis personnalisé selon votre projet
+            </p>
+
             <!-- Bouton En savoir plus -->
-            <a routerLink="/saas" class="block w-full mt-4 py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center font-bold rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-              En savoir plus
+            <a routerLink="/saas" class="block w-full mt-2 py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center font-bold rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              Discutons de votre projet
               <svg class="w-4 h-4 inline-block ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>

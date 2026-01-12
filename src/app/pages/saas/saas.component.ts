@@ -11,8 +11,13 @@ import { SeoService } from '../../services/seo.service';
   styleUrls: ['./saas.component.css']
 })
 export class SaasComponent implements OnInit {
+  isMonthly = false; // false = comptant, true = mensuel
 
   constructor(private seoService: SeoService) {}
+
+  togglePricing() {
+    this.isMonthly = !this.isMonthly;
+  }
 
   ngOnInit() {
     this.seoService.updateMetaTags({
