@@ -1,0 +1,253 @@
+<!-- Header spacer for fixed navbar -->
+<div class="h-20"></div>
+
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white min-h-screen">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Mentions Legales
+      </h1>
+      <p class="text-gray-600">
+        Derniere mise a jour : {{ dateMiseAJour }}
+      </p>
+    </div>
+
+    <!-- Contenu des Mentions Legales -->
+    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 space-y-8">
+
+      <!-- Section 1 : Editeur du site -->
+      <article id="editeur" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          1. Editeur du site
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p>Le site <strong>nonodevco.com</strong> est edite par :</p>
+          <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <p><strong>Nom :</strong> {{ entreprise.nom }}</p>
+            <p><strong>Statut juridique :</strong> {{ entreprise.statut }}</p>
+            <p><strong>SIRET :</strong> {{ entreprise.siret }}</p>
+            <p><strong>Siege social :</strong> {{ entreprise.adresse }}, {{ entreprise.codePostal }} {{ entreprise.ville }}</p>
+            <p><strong>Telephone :</strong> {{ entreprise.telephone }}</p>
+            <p><strong>Email :</strong> <a href="mailto:{{ entreprise.email }}" class="text-blue-600 hover:underline">{{ entreprise.email }}</a></p>
+          </div>
+          <p class="mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200 text-sm">
+            <strong>TVA :</strong> TVA non applicable, article 293 B du Code General des Impots (regime de la franchise en base de TVA).
+          </p>
+        </div>
+      </article>
+
+      <!-- Section 2 : Directeur de la publication -->
+      <article id="directeur" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          2. Directeur de la publication
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p><strong>Directeur de la publication :</strong> {{ entreprise.nom }}</p>
+          <p><strong>Contact :</strong> <a href="mailto:{{ entreprise.email }}" class="text-blue-600 hover:underline">{{ entreprise.email }}</a></p>
+        </div>
+      </article>
+
+      <!-- Section 3 : Hebergeur -->
+      <article id="hebergeur" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          3. Hebergeur du site
+        </h2>
+        <div class="space-y-2 text-gray-700">
+          <p>Le site est heberge par :</p>
+          <div class="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <p><strong>Nom :</strong> {{ hebergeur.nom }}</p>
+            <p><strong>Adresse :</strong> {{ hebergeur.adresse }}</p>
+            <p><strong>Ville :</strong> {{ hebergeur.ville }}</p>
+            <p><strong>Pays :</strong> {{ hebergeur.pays }}</p>
+            <p><strong>Site web :</strong> <a href="{{ hebergeur.site }}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">{{ hebergeur.site }}</a></p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section 4 : Propriete intellectuelle -->
+      <article id="propriete" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          4. Propriete intellectuelle
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            L'ensemble du contenu du site nonodevco.com (textes, images, graphismes, logo, icones, sons, logiciels, etc.) est la propriete exclusive de {{ entreprise.nom }}, a l'exception des marques, logos ou contenus appartenant a d'autres societes partenaires ou auteurs.
+          </p>
+          <p>
+            Toute reproduction, representation, modification, publication, adaptation de tout ou partie des elements du site, quel que soit le moyen ou le procede utilise, est interdite, sauf autorisation ecrite prealable de {{ entreprise.nom }}.
+          </p>
+          <p>
+            Toute exploitation non autorisee du site ou de l'un quelconque des elements qu'il contient sera consideree comme constitutive d'une contrefacon et poursuivie conformement aux dispositions des articles L.335-2 et suivants du Code de la Propriete Intellectuelle.
+          </p>
+        </div>
+      </article>
+
+      <!-- Section 5 : Protection des donnees personnelles -->
+      <article id="donnees" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          5. Protection des donnees personnelles (RGPD)
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>5.1. Responsable du traitement :</strong> {{ entreprise.nom }}, {{ entreprise.adresse }}, {{ entreprise.codePostal }} {{ entreprise.ville }}.
+          </p>
+          <p>
+            <strong>5.2. Donnees collectees :</strong> Dans le cadre de l'utilisation du site, les donnees suivantes peuvent etre collectees :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Nom et prenom</li>
+            <li>Adresse email</li>
+            <li>Numero de telephone</li>
+            <li>Nom de l'entreprise (le cas echeant)</li>
+            <li>Donnees de navigation (cookies, adresse IP)</li>
+          </ul>
+          <p>
+            <strong>5.3. Finalites du traitement :</strong> Les donnees personnelles sont collectees pour :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Repondre aux demandes de contact et de devis</li>
+            <li>Gerer la relation commerciale</li>
+            <li>Ameliorer l'experience utilisateur du site</li>
+            <li>Realiser des statistiques de frequentation</li>
+          </ul>
+          <p>
+            <strong>5.4. Base legale :</strong> Le traitement des donnees repose sur :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Le consentement de l'utilisateur</li>
+            <li>L'execution d'un contrat ou de mesures precontractuelles</li>
+            <li>L'interet legitime du responsable de traitement</li>
+          </ul>
+          <p>
+            <strong>5.5. Destinataires :</strong> Les donnees personnelles ne sont pas transmises a des tiers, sauf :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Prestataires techniques necessaires au fonctionnement du site (hebergeur, outils d'analyse)</li>
+            <li>Obligations legales</li>
+          </ul>
+          <p>
+            <strong>5.6. Duree de conservation :</strong> Les donnees sont conservees pendant une duree de 3 ans a compter du dernier contact, ou conformement aux obligations legales applicables.
+          </p>
+          <p>
+            <strong>5.7. Droits des personnes :</strong> Conformement au Reglement (UE) 2016/679 (RGPD) et a la loi Informatique et Libertes, vous disposez des droits suivants :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li><strong>Droit d'acces :</strong> obtenir la confirmation que des donnees vous concernant sont traitees</li>
+            <li><strong>Droit de rectification :</strong> demander la correction de donnees inexactes</li>
+            <li><strong>Droit a l'effacement :</strong> demander la suppression de vos donnees</li>
+            <li><strong>Droit a la limitation :</strong> demander la limitation du traitement</li>
+            <li><strong>Droit a la portabilite :</strong> recevoir vos donnees dans un format structure</li>
+            <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos donnees</li>
+          </ul>
+          <p class="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+            Pour exercer vos droits, contactez-nous a : <a href="mailto:{{ entreprise.email }}" class="text-blue-600 hover:underline font-semibold">{{ entreprise.email }}</a>
+          </p>
+          <p>
+            <strong>5.8. Reclamation :</strong> En cas de difficulte, vous pouvez introduire une reclamation aupres de la CNIL (Commission Nationale de l'Informatique et des Libertes) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">www.cnil.fr</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- Section 6 : Cookies -->
+      <article id="cookies" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          6. Cookies
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>6.1. Definition :</strong> Un cookie est un petit fichier texte depose sur votre terminal (ordinateur, tablette, smartphone) lors de votre visite sur le site.
+          </p>
+          <p>
+            <strong>6.2. Types de cookies utilises :</strong>
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li><strong>Cookies strictement necessaires :</strong> indispensables au fonctionnement du site</li>
+            <li><strong>Cookies analytiques (Google Analytics) :</strong> permettent de mesurer l'audience du site</li>
+          </ul>
+          <p>
+            <strong>6.3. Gestion des cookies :</strong> Lors de votre premiere visite, une banniere vous permet d'accepter ou de refuser les cookies non essentiels. Vous pouvez modifier vos preferences a tout moment via la banniere de consentement (Axeptio).
+          </p>
+          <p>
+            <strong>6.4. Google Consent Mode :</strong> Ce site utilise Google Consent Mode pour respecter votre choix concernant les cookies. Si vous refusez les cookies analytiques, aucune donnee personnelle ne sera collectee par Google Analytics.
+          </p>
+        </div>
+      </article>
+
+      <!-- Section 7 : Limitation de responsabilite -->
+      <article id="responsabilite" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          7. Limitation de responsabilite
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            <strong>7.1.</strong> {{ entreprise.nom }} s'efforce d'assurer l'exactitude et la mise a jour des informations diffusees sur le site. Toutefois, il ne peut garantir l'exactitude, la precision ou l'exhaustivite des informations mises a disposition.
+          </p>
+          <p>
+            <strong>7.2.</strong> {{ entreprise.nom }} decline toute responsabilite :
+          </p>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>Pour toute imprecision, inexactitude ou omission portant sur les informations disponibles sur le site</li>
+            <li>Pour tous dommages resultant d'une intrusion frauduleuse d'un tiers ayant entraine une modification des informations</li>
+            <li>Pour tous dommages, directs ou indirects, resultant de l'acces ou de l'utilisation du site</li>
+          </ul>
+          <p>
+            <strong>7.3.</strong> Le site peut contenir des liens vers d'autres sites. {{ entreprise.nom }} ne peut etre tenu responsable du contenu de ces sites externes.
+          </p>
+        </div>
+      </article>
+
+      <!-- Section 8 : Droit applicable -->
+      <article id="droit" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          8. Droit applicable et juridiction
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Les presentes mentions legales sont regies par le droit francais. En cas de litige, et a defaut de resolution amiable, les tribunaux francais seront seuls competents.
+          </p>
+        </div>
+      </article>
+
+      <!-- Section 9 : Contact -->
+      <article id="contact" class="scroll-mt-24">
+        <h2 class="text-xl font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-500">
+          9. Contact
+        </h2>
+        <div class="space-y-3 text-gray-700">
+          <p>
+            Pour toute question relative aux presentes mentions legales, vous pouvez nous contacter :
+          </p>
+          <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+            <p><strong>Email :</strong> <a href="mailto:{{ entreprise.email }}" class="text-blue-600 hover:underline">{{ entreprise.email }}</a></p>
+            <p><strong>Telephone :</strong> {{ entreprise.telephone }}</p>
+            <p><strong>Adresse :</strong> {{ entreprise.adresse }}, {{ entreprise.codePostal }} {{ entreprise.ville }}</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Signature -->
+      <div class="mt-12 pt-8 border-t-2 border-gray-200">
+        <p class="text-center text-gray-600 text-sm">
+          Mentions Legales - Version du {{ dateMiseAJour }}
+        </p>
+        <p class="text-center text-gray-500 text-xs mt-2">
+          {{ entreprise.nom }} - {{ entreprise.statut }} - SIRET {{ entreprise.siret }}
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bouton retour -->
+    <div class="mt-8 text-center">
+      <a routerLink="/" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Retour a l'accueil
+      </a>
+    </div>
+
+  </div>
+</section>

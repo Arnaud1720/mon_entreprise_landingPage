@@ -4,13 +4,13 @@ import { RouterModule } from '@angular/router';
 import { SeoService } from '../../services/seo.service';
 
 @Component({
-  selector: 'app-cgv',
+  selector: 'app-mentions-legales',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './cgv.component.html',
-  styleUrls: ['./cgv.component.css']
+  templateUrl: './mentions-legales.component.html',
+  styleUrls: ['./mentions-legales.component.css']
 })
-export class CgvComponent implements OnInit {
+export class MentionsLegalesComponent implements OnInit {
 
   // Informations de l'entreprise
   entreprise = {
@@ -24,19 +24,28 @@ export class CgvComponent implements OnInit {
     telephone: '06 26 92 13 45'
   };
 
-  // Date de derniere mise a jour des CGV
-  dateMiseAJour = '12 janvier 2026';
+  // Informations de l'hebergeur
+  hebergeur = {
+    nom: 'Vercel Inc.',
+    adresse: '340 S Lemon Ave #4133',
+    ville: 'Walnut, CA 91789',
+    pays: 'Etats-Unis',
+    site: 'https://vercel.com'
+  };
+
+  // Date de derniere mise a jour
+  dateMiseAJour = '13 janvier 2026';
 
   constructor(private seoService: SeoService) {}
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Conditions Generales de Vente | Arnaud Derisbourg - Developpeur Freelance',
-      description: 'Conditions Generales de Vente des prestations de developpement web et SaaS proposees par Arnaud Derisbourg, developpeur freelance.',
-      keywords: 'cgv, conditions generales de vente, mentions legales, developpeur freelance',
+      title: 'Mentions Legales | Arnaud Derisbourg - Developpeur Freelance',
+      description: 'Mentions legales du site nonodevco.com - Informations sur l\'editeur, l\'hebergeur et la protection des donnees personnelles.',
+      keywords: 'mentions legales, informations legales, editeur, hebergeur, RGPD, developpeur freelance',
       author: 'Arnaud Derisbourg',
       type: 'website',
-      url: 'https://nonodevco.com/cgv',
+      url: 'https://nonodevco.com/mentions-legales',
       image: 'https://nonodevco.com/assets/og-image.jpg'
     });
 

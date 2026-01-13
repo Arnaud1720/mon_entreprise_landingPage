@@ -26,8 +26,8 @@ export class SaasComponent implements OnInit {
       keywords: 'développement saas, créer saas, saas sur mesure, marketplace, application métier, java spring boot, angular, wordpress custom, développeur saas freelance',
       author: 'Arnaud Derisbourg',
       type: 'website',
-      url: 'https://votresite.com/saas',
-      image: 'https://votresite.com/assets/og-image-saas.jpg'
+      url: 'https://nonodevco.com/saas',
+      image: 'https://nonodevco.com/assets/og-image.jpg'
     });
   }
 
