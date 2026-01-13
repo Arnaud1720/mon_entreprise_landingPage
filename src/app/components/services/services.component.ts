@@ -29,4 +29,11 @@ export class ServicesComponent implements OnInit {
       this.servicesVisible = rect.top < windowHeight * 0.75;
     }
   }
+
+  scrollToContact(): void {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

@@ -274,8 +274,8 @@ export class FaqComponent {
 
   faqItems: FaqItem[] = [
     {
-      question: 'Combien coûte un site vitrine ?',
-      answer: 'Le tarif d\'un site vitrine démarre à partir de 800€ et peut aller jusqu\'à 3000€ selon les fonctionnalités souhaitées (nombre de pages, formulaires, intégrations, animations...). Chaque projet est unique et fait l\'objet d\'un devis personnalisé gratuit après notre premier échange.',
+      question: 'Combien coûte un site WordPress ?',
+      answer: 'Un site WordPress sur mesure démarre à partir de 1 500€ HT pour un site vitrine de 5 pages. Le tarif peut évoluer selon les fonctionnalités souhaitées (e-commerce, réservation, espace membre...). Bonne nouvelle : je propose un paiement en 3x sans frais (à la signature, à mi-projet, à la livraison). Chaque projet fait l\'objet d\'un devis personnalisé gratuit.',
       isOpen: false,
       scrollProgress: 0
     },
@@ -300,6 +300,12 @@ export class FaqComponent {
     {
       question: 'Quelles technologies utilisez-vous ?',
       answer: 'Je maîtrise un large éventail de technologies : WordPress pour les sites vitrines administrables, Angular et React pour les interfaces modernes, Java/Spring Boot pour les backends robustes, et bien d\'autres (Node.js, TypeScript, Tailwind CSS...). Le choix dépend de vos besoins spécifiques.',
+      isOpen: false,
+      scrollProgress: 0
+    },
+    {
+      question: 'Comment fonctionne le paiement mensuel pour les SaaS ?',
+      answer: 'Pour les projets SaaS, je propose un paiement échelonné sur 12 mois avec engagement. Par exemple, un SaaS Starter à 3 500€ peut être réglé en 12 mensualités de 350€. Le projet est développé et livré selon le planning convenu, les paiements continuent jusqu\'au terme des 12 mois. C\'est idéal pour lancer votre projet sans mobiliser toute la trésorerie d\'un coup.',
       isOpen: false,
       scrollProgress: 0
     }
