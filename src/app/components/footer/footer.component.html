@@ -67,6 +67,12 @@
               </a>
             </li>
             <li>
+              <a routerLink="/mon-approche"
+                 class="text-gray-400 hover:text-white cursor-pointer transition-all duration-300 hover:translate-x-2 inline-block group">
+                <span class="group-hover:mr-2 transition-all">→</span> Mon Approche
+              </a>
+            </li>
+            <li>
               <a (click)="scrollToSection('about')"
                  class="text-gray-400 hover:text-white cursor-pointer transition-all duration-300 hover:translate-x-2 inline-block group">
                 <span class="group-hover:mr-2 transition-all">→</span> À propos
@@ -126,7 +132,16 @@
         <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <div class="mb-4 md:mb-0 text-center md:text-left">
             <p>
-              © {{ currentYear }} NonoDevCo • TVA non applicable,
+              © {{ currentYear }} NonoDevCo — Développeur Web Freelance
+            </p>
+            <p class="mt-1 text-gray-500">
+              Bordeaux • Saint-Médard-en-Jalles • Gironde
+            </p>
+            <p class="mt-1">
+              <a href="mailto:contact.nonodevco@gmail.com" class="text-gray-500 hover:text-blue-400 transition-colors duration-300">contact.nonodevco&#64;gmail.com</a>
+            </p>
+            <p class="mt-2 text-xs text-gray-600">
+              TVA non applicable,
               <a href="https://copeps.fr/actualites/exoneration-de-tva-art-293b-du-cgi/"
                  target="_blank"
                  rel="noopener noreferrer"

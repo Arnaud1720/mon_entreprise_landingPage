@@ -1,0 +1,215 @@
+<div class="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+  <!-- Header avec navigation retour -->
+  <div class="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <a routerLink="/" class="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors group">
+          <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          <span>Retour à l'accueil</span>
+        </a>
+        <span class="text-sm text-gray-500">NonoDevCo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-blue-300/20 rounded-full filter blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-300/20 rounded-full filter blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+            Mon Approche
+          </span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+          Je ne travaille pas <em>pour</em> vous, je travaille <strong>avec</strong> vous.
+        </p>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+          Chaque projet est une collaboration. Vous connaissez votre métier, je connais le développement web.
+          Ensemble, nous construisons la solution qui vous correspond vraiment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Les étapes de ma méthodologie -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+          Ma Méthodologie en 5 Étapes
+        </h2>
+        <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+          Une approche structurée pour des projets réussis, sans stress et sans mauvaises surprises.
+        </p>
+
+        <div class="space-y-12">
+          <div *ngFor="let etape of etapes; let i = index"
+               class="relative">
+            <!-- Ligne de connexion -->
+            <div *ngIf="i < etapes.length - 1"
+                 class="absolute left-8 top-24 w-0.5 h-full bg-gradient-to-b from-blue-200 to-purple-200 hidden md:block"></div>
+
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+              <!-- Numéro et icône -->
+              <div class="flex-shrink-0 relative z-10">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-3xl shadow-lg shadow-blue-500/20">
+                  {{ etape.icon }}
+                </div>
+              </div>
+
+              <!-- Contenu -->
+              <div class="flex-grow bg-gray-50 rounded-2xl p-6 md:p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="text-sm font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                    Étape {{ etape.numero }}
+                  </span>
+                  <h3 class="text-xl md:text-2xl font-bold text-gray-900">
+                    {{ etape.titre }}
+                  </h3>
+                </div>
+                <p class="text-gray-600 mb-6 text-lg">
+                  {{ etape.description }}
+                </p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <li *ngFor="let detail of etape.details"
+                      class="flex items-start gap-2 text-gray-700">
+                    <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>{{ detail }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mes engagements -->
+  <section class="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+          Mes Engagements
+        </h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Ce que vous pouvez attendre de notre collaboration.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div *ngFor="let engagement of engagements"
+               class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="text-4xl mb-4">{{ engagement.icon }}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ engagement.titre }}</h3>
+            <p class="text-gray-600">{{ engagement.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Différence avec une agence -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+          Pourquoi un Freelance ?
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Agence -->
+          <div class="bg-gray-100 rounded-2xl p-6 md:p-8">
+            <h3 class="text-xl font-bold text-gray-700 mb-6 flex items-center gap-2">
+              <span class="text-2xl">🏢</span> Avec une agence
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-gray-600">
+                <span class="text-red-400">✗</span>
+                <span>Plusieurs interlocuteurs (commercial, chef de projet, développeur...)</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-600">
+                <span class="text-red-400">✗</span>
+                <span>Communication parfois compliquée</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-600">
+                <span class="text-red-400">✗</span>
+                <span>Coûts de structure répercutés sur le prix</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-600">
+                <span class="text-red-400">✗</span>
+                <span>Processus parfois rigides</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Freelance -->
+          <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 md:p-8 ring-2 ring-blue-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <span class="text-2xl">👨‍💻</span> Avec moi
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-green-500">✓</span>
+                <span><strong>Un seul interlocuteur</strong> du début à la fin</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-green-500">✓</span>
+                <span><strong>Communication directe</strong> et réactive</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-green-500">✓</span>
+                <span><strong>Tarifs compétitifs</strong> sans frais cachés</span>
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-green-500">✓</span>
+                <span><strong>Flexibilité</strong> et adaptation à vos besoins</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Prêt à démarrer votre projet ?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8">
+          Discutons ensemble de vos besoins. Premier échange gratuit et sans engagement.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button (click)="scrollToContact()"
+                  class="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl">
+            Prendre contact
+          </button>
+          <a routerLink="/saas"
+             class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-colors">
+            Voir les offres SaaS
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer simplifié -->
+  <footer class="py-8 bg-gray-900 text-gray-400">
+    <div class="container mx-auto px-4 text-center">
+      <p>NonoDevCo - Arnaud Derisbourg - Développeur Web Freelance</p>
+      <p class="mt-2 text-sm">Bordeaux - Saint-Médard-en-Jalles - Gironde</p>
+    </div>
+  </footer>
+</div>

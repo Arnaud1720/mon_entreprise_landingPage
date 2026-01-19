@@ -1,16 +1,27 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// Critères de notation détaillés
+interface RatingCriteria {
+  delais: number;        // Respect des délais (1-5)
+  qualite: number;       // Qualité du développement (1-5)
+  communication: number; // Communication (1-5)
+  rapport: number;       // Rapport qualité/prix (1-5)
+}
+
 interface Testimonial {
   id: number;
   name: string;
   role: string;
   company: string;
-  rating: number;
+  companyUrl?: string;   // Lien vers le site du client
+  ratings: RatingCriteria;
+  averageRating: number; // Moyenne calculée
   comment: string;
   image?: string;
-  source: 'google' | 'trustpilot' | 'malt' | 'linkedin';
+  source: 'google' | 'trustpilot' | 'malt' | 'linkedin' | 'direct';
   date: string;
+  projectType?: string;  // Type de projet réalisé
 }
 
 @Component({
@@ -23,39 +34,42 @@ interface Testimonial {
 export class TestimonialsComponent implements OnInit {
   testimonialsVisible = false;
 
-  // Avis exemples (à remplacer par de vrais avis plus tard)
+  // Vrais témoignages clients
+  // ⚠️ IMPORTANT : Ne mettre ici QUE des vrais témoignages avec autorisation du client
   testimonials: Testimonial[] = [
+    // ============================================
+    // TEMPLATE : Copier ce bloc pour ajouter un nouveau témoignage
+    // ============================================
     {
       id: 1,
-      name: 'Sophie Martin',
-      role: 'Directrice',
-      company: 'Boutique en ligne',
-      rating: 5,
-      comment: 'Excellent travail ! Le site WordPress est exactement ce que je voulais. Facile à gérer et très professionnel. Je recommande vivement !',
-      source: 'google',
-      date: 'Il y a 2 mois'
-    },
-    {
-      id: 2,
-      name: 'Jean Dupont',
-      role: 'CEO',
-      company: 'StartUp Tech',
-      rating: 5,
-      comment: 'Application Angular parfaitement développée. Code propre, bien documenté et livré dans les délais. Un vrai professionnel !',
-      source: 'malt',
-      date: 'Il y a 1 mois'
-    },
-    {
-      id: 3,
-      name: 'Marie Lambert',
-      role: 'Responsable Marketing',
-      company: 'Agence Créative',
-      rating: 5,
-      comment: 'Très satisfaite du site vitrine. Design moderne, responsive et SEO optimisé. La formation pour gérer le contenu était très claire.',
-      source: 'google',
-      date: 'Il y a 3 semaines'
+      name: 'Un P\'tit Coup de Main',           // Nom du client ou de l'entreprise
+      role: 'Gérant',                            // Rôle de la personne
+      company: 'Un P\'tit Coup de Main',         // Nom de l'entreprise
+      companyUrl: '',                            // URL du site (optionnel)
+      ratings: {
+        delais: 5,        // Note sur 5 : Respect des délais
+        qualite: 5,       // Note sur 5 : Qualité du développement
+        communication: 5, // Note sur 5 : Communication
+        rapport: 5        // Note sur 5 : Rapport qualité/prix
+      },
+      averageRating: 5,   // Moyenne des 4 notes (calculer manuellement ou automatiquement)
+      comment: 'En attente du témoignage client...',  // Le commentaire du client
+      projectType: 'Site WordPress',             // Type de projet : Site WordPress, Application Angular, SaaS, etc.
+      source: 'direct',                          // Source : google, malt, linkedin, trustpilot, direct
+      date: 'Janvier 2026'                       // Date du témoignage
     }
+    // ============================================
+    // FIN DU TEMPLATE
+    // ============================================
   ];
+
+  // Labels pour les critères de notation
+  criteriaLabels: { [key: string]: string } = {
+    delais: 'Respect des délais',
+    qualite: 'Qualité du code',
+    communication: 'Communication',
+    rapport: 'Rapport qualité/prix'
+  };
 
   currentIndex = 0;
   autoplayInterval: any;
@@ -112,7 +126,8 @@ export class TestimonialsComponent implements OnInit {
       google: '🔍',
       trustpilot: '⭐',
       malt: '💼',
-      linkedin: '🔗'
+      linkedin: '🔗',
+      direct: '✉️'
     };
     return icons[source] || '⭐';
   }
@@ -122,9 +137,24 @@ export class TestimonialsComponent implements OnInit {
       google: 'Google',
       trustpilot: 'Trustpilot',
       malt: 'Malt',
-      linkedin: 'LinkedIn'
+      linkedin: 'LinkedIn',
+      direct: 'Témoignage direct'
     };
     return names[source] || source;
+  }
+
+  // Obtenir les critères sous forme de tableau pour l'affichage
+  getCriteriaArray(ratings: RatingCriteria): { key: string, label: string, value: number }[] {
+    return Object.keys(ratings).map(key => ({
+      key,
+      label: this.criteriaLabels[key] || key,
+      value: ratings[key as keyof RatingCriteria]
+    }));
+  }
+
+  // Vérifier si on a de vrais témoignages (pas en attente)
+  hasRealTestimonials(): boolean {
+    return this.testimonials.some(t => !t.comment.includes('En attente'));
   }
 
   scrollToContact() {

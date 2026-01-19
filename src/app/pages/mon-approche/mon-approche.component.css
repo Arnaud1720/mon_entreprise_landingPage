@@ -1,0 +1,30 @@
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Styles spécifiques */
+section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Effet de survol sur les cartes d'étapes */
+.space-y-12 > div:hover .bg-gray-50 {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+}
+
+/* Ligne de connexion animée */
+.absolute.w-0\.5 {
+  background: linear-gradient(180deg, #93c5fd 0%, #c4b5fd 100%);
+}

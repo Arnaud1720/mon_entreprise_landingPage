@@ -70,23 +70,27 @@ export class SeoService {
       const localBusinessSchema = {
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
-        'name': 'Arnaud Derisbourg - Développeur Web Freelance',
-        'description': 'Développeur web freelance spécialisé en WordPress, Java, Spring Boot et Angular. Création de sites vitrines et applications web sur mesure pour TPE/PME.',
-        'url': 'https://votresite.com',
-        'telephone': '+33-X-XX-XX-XX-XX',
-        'email': 'derisbourgarnaud@gmail.com',
+        'name': 'NonoDevCo - Arnaud Derisbourg - Développeur Web Freelance',
+        'description': 'Développeur web freelance à Bordeaux spécialisé en WordPress, Java, Spring Boot et Angular. Création de sites vitrines et applications web sur mesure pour TPE/PME en Gironde.',
+        'url': 'https://nonodevco.com',
+        'telephone': '+33626921345',
+        'email': 'contact.nonodevco@gmail.com',
         'address': {
           '@type': 'PostalAddress',
+          'streetAddress': '2 rue Charles Chaplin',
+          'addressLocality': 'Saint-Médard-en-Jalles',
+          'postalCode': '33160',
+          'addressRegion': 'Gironde',
           'addressCountry': 'FR'
         },
+        'geo': {
+          '@type': 'GeoCoordinates',
+          'latitude': '44.8985',
+          'longitude': '-0.7189'
+        },
         'priceRange': '€€',
-        'areaServed': 'France',
-        'serviceType': ['Développement WordPress', 'Développement Java', 'Développement Angular', 'Création site vitrine', 'Application web sur mesure'],
-        'aggregateRating': {
-          '@type': 'AggregateRating',
-          'ratingValue': '5',
-          'reviewCount': '3'
-        }
+        'areaServed': ['Bordeaux', 'Saint-Médard-en-Jalles', 'Gironde', 'Nouvelle-Aquitaine', 'France'],
+        'serviceType': ['Développement WordPress', 'Développement Java', 'Développement Angular', 'Création site vitrine', 'Application web sur mesure', 'SaaS']
       };
 
       // Person Schema
@@ -95,13 +99,24 @@ export class SeoService {
         '@type': 'Person',
         'name': 'Arnaud Derisbourg',
         'jobTitle': 'Développeur Web Freelance',
-        'description': 'Développeur web freelance expert en WordPress, Java, Spring Boot et Angular 17+',
-        'email': 'derisbourgarnaud@gmail.com',
-        'url': 'https://votresite.com',
+        'description': 'Développeur web freelance à Bordeaux expert en WordPress, Java, Spring Boot et Angular. Basé à Saint-Médard-en-Jalles en Gironde.',
+        'email': 'contact.nonodevco@gmail.com',
+        'telephone': '+33626921345',
+        'url': 'https://nonodevco.com',
         'sameAs': [
-          'https://www.malt.fr/profile/votreprofil',
-          'https://www.linkedin.com/in/votreprofil'
+          'https://www.malt.fr/profile/arnaudderisbourg',
+          'https://www.linkedin.com/in/arnaud-derisbourg-25765a169/',
+          'https://www.fiverr.com/s/VY9r39e'
         ],
+        'workLocation': {
+          '@type': 'Place',
+          'address': {
+            '@type': 'PostalAddress',
+            'addressLocality': 'Saint-Médard-en-Jalles',
+            'addressRegion': 'Gironde',
+            'addressCountry': 'FR'
+          }
+        },
         'knowsAbout': [
           'Développement WordPress',
           'Java',
@@ -110,7 +125,8 @@ export class SeoService {
           'Développement Web',
           'Application Web',
           'Site Vitrine',
-          'E-commerce'
+          'SaaS',
+          'API REST'
         ]
       };
 
@@ -174,34 +190,58 @@ export class SeoService {
     return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://votresite.com/</loc>
+    <loc>https://nonodevco.com/</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://votresite.com/#services</loc>
+    <loc>https://nonodevco.com/#services</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://votresite.com/#about</loc>
+    <loc>https://nonodevco.com/#about</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://votresite.com/#testimonials</loc>
+    <loc>https://nonodevco.com/#testimonials</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://votresite.com/#contact</loc>
+    <loc>https://nonodevco.com/#contact</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nonodevco.com/saas</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nonodevco.com/mon-approche</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nonodevco.com/cgv</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://nonodevco.com/mentions-legales</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>`;
   }

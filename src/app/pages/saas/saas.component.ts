@@ -21,9 +21,9 @@ export class SaasComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Développement SaaS Sur Mesure | Arnaud Derisbourg - Développeur Freelance',
-      description: 'Création de SaaS personnalisés : marketplaces, outils métiers, applications de réservation. Stack WordPress ou Java/Angular/Spring Boot. Devis gratuit.',
-      keywords: 'développement saas, créer saas, saas sur mesure, marketplace, application métier, java spring boot, angular, wordpress custom, développeur saas freelance',
+      title: 'Développement SaaS Sur Mesure Bordeaux | NonoDevCo - Développeur Freelance',
+      description: 'Création de SaaS personnalisés à Bordeaux : marketplaces, outils métiers, applications de réservation. Stack Java/Angular/Spring Boot ou WordPress. Développeur freelance en Gironde.',
+      keywords: 'développement saas bordeaux, créer saas gironde, saas sur mesure, marketplace, application métier, java spring boot, angular, développeur saas freelance bordeaux, saint-médard-en-jalles',
       author: 'Arnaud Derisbourg',
       type: 'website',
       url: 'https://nonodevco.com/saas',
