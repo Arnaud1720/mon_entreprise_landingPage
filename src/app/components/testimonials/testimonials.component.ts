@@ -42,21 +42,21 @@ export class TestimonialsComponent implements OnInit {
     // ============================================
     {
       id: 1,
-      name: 'Un P\'tit Coup de Main',           // Nom du client ou de l'entreprise
-      role: 'Gérant',                            // Rôle de la personne
-      company: 'Un P\'tit Coup de Main',         // Nom de l'entreprise
-      companyUrl: '',                            // URL du site (optionnel)
+      name: 'Elisa',
+      role: 'Gerante',
+      company: 'Un P\'tit Coup de Main',
+      companyUrl: 'https://unptitcoupdemain.com',
       ratings: {
-        delais: 5,        // Note sur 5 : Respect des délais
-        qualite: 5,       // Note sur 5 : Qualité du développement
-        communication: 5, // Note sur 5 : Communication
-        rapport: 5        // Note sur 5 : Rapport qualité/prix
+        delais: 5,
+        qualite: 5,
+        communication: 5,
+        rapport: 5
       },
-      averageRating: 5,   // Moyenne des 4 notes (calculer manuellement ou automatiquement)
-      comment: 'En attente du témoignage client...',  // Le commentaire du client
-      projectType: 'Site WordPress',             // Type de projet : Site WordPress, Application Angular, SaaS, etc.
-      source: 'direct',                          // Source : google, malt, linkedin, trustpilot, direct
-      date: 'Janvier 2026'                       // Date du témoignage
+      averageRating: 5,
+      comment: 'Arnaud a ete tres professionnel et a l\'ecoute tout au long du projet. La communication etait excellente. Il est meme alle au-dela de mes attentes en creant une application mobile evolutive. Je recommande vivement !',
+      projectType: 'Site WordPress',
+      source: 'direct',
+      date: 'Janvier 2026'
     }
     // ============================================
     // FIN DU TEMPLATE
@@ -122,14 +122,8 @@ export class TestimonialsComponent implements OnInit {
   }
 
   getSourceIcon(source: string): string {
-    const icons: { [key: string]: string } = {
-      google: '🔍',
-      trustpilot: '⭐',
-      malt: '💼',
-      linkedin: '🔗',
-      direct: '✉️'
-    };
-    return icons[source] || '⭐';
+    // Retourne le type de source pour affichage SVG dans le template
+    return source;
   }
 
   getSourceName(source: string): string {

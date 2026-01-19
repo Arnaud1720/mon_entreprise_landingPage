@@ -7,7 +7,7 @@
           <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
           </svg>
-          <span>Retour à l'accueil</span>
+          <span>Retour a l'accueil</span>
         </a>
         <span class="text-sm text-gray-500">NonoDevCo</span>
       </div>
@@ -32,7 +32,7 @@
           Je ne travaille pas <em>pour</em> vous, je travaille <strong>avec</strong> vous.
         </p>
         <p class="text-lg text-gray-500 max-w-2xl mx-auto">
-          Chaque projet est une collaboration. Vous connaissez votre métier, je connais le développement web.
+          Chaque projet est une collaboration. Vous connaissez votre metier, je connais le developpement web.
           Ensemble, nous construisons la solution qui vous correspond vraiment.
         </p>
       </div>
@@ -44,10 +44,10 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
-          Ma Méthodologie en 5 Étapes
+          Ma Methodologie en 5 Etapes
         </h2>
         <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-          Une approche structurée pour des projets réussis, sans stress et sans mauvaises surprises.
+          Une approche structuree pour des projets reussis, sans stress et sans mauvaises surprises.
         </p>
 
         <div class="space-y-12">
@@ -60,8 +60,30 @@
             <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
               <!-- Numéro et icône -->
               <div class="flex-shrink-0 relative z-10">
-                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-3xl shadow-lg shadow-blue-500/20">
-                  {{ etape.icon }}
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                  <!-- Icône SVG selon le type -->
+                  <ng-container [ngSwitch]="etape.iconType">
+                    <!-- Ear / Écoute -->
+                    <svg *ngSwitchCase="'ear'" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                    </svg>
+                    <!-- Document -->
+                    <svg *ngSwitchCase="'document'" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <!-- Code -->
+                    <svg *ngSwitchCase="'code'" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                    <!-- Calendar -->
+                    <svg *ngSwitchCase="'calendar'" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <!-- Check -->
+                    <svg *ngSwitchCase="'check'" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </ng-container>
                 </div>
               </div>
 
@@ -69,7 +91,7 @@
               <div class="flex-grow bg-gray-50 rounded-2xl p-6 md:p-8 hover:shadow-lg transition-shadow duration-300">
                 <div class="flex items-center gap-3 mb-4">
                   <span class="text-sm font-bold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
-                    Étape {{ etape.numero }}
+                    Etape {{ etape.numero }}
                   </span>
                   <h3 class="text-xl md:text-2xl font-bold text-gray-900">
                     {{ etape.titre }}
@@ -109,7 +131,26 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div *ngFor="let engagement of engagements"
                class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div class="text-4xl mb-4">{{ engagement.icon }}</div>
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-4">
+              <ng-container [ngSwitch]="engagement.iconType">
+                <!-- Handshake -->
+                <svg *ngSwitchCase="'handshake'" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                <!-- Clock -->
+                <svg *ngSwitchCase="'clock'" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <!-- Chat -->
+                <svg *ngSwitchCase="'chat'" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+                <!-- Shield -->
+                <svg *ngSwitchCase="'shield'" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </ng-container>
+            </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3">{{ engagement.titre }}</h3>
             <p class="text-gray-600">{{ engagement.description }}</p>
           </div>
@@ -129,24 +170,35 @@
         <div class="grid md:grid-cols-2 gap-8">
           <!-- Agence -->
           <div class="bg-gray-100 rounded-2xl p-6 md:p-8">
-            <h3 class="text-xl font-bold text-gray-700 mb-6 flex items-center gap-2">
-              <span class="text-2xl">🏢</span> Avec une agence
+            <h3 class="text-xl font-bold text-gray-700 mb-6 flex items-center gap-3">
+              <svg class="w-7 h-7 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+              Avec une agence
             </h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3 text-gray-600">
-                <span class="text-red-400">✗</span>
-                <span>Plusieurs interlocuteurs (commercial, chef de projet, développeur...)</span>
+                <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+                <span>Plusieurs interlocuteurs (commercial, chef de projet, developpeur...)</span>
               </li>
               <li class="flex items-start gap-3 text-gray-600">
-                <span class="text-red-400">✗</span>
-                <span>Communication parfois compliquée</span>
+                <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+                <span>Communication parfois compliquee</span>
               </li>
               <li class="flex items-start gap-3 text-gray-600">
-                <span class="text-red-400">✗</span>
-                <span>Coûts de structure répercutés sur le prix</span>
+                <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+                <span>Couts de structure repercutes sur le prix</span>
               </li>
               <li class="flex items-start gap-3 text-gray-600">
-                <span class="text-red-400">✗</span>
+                <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
                 <span>Processus parfois rigides</span>
               </li>
             </ul>
@@ -154,25 +206,36 @@
 
           <!-- Freelance -->
           <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 md:p-8 ring-2 ring-blue-200">
-            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <span class="text-2xl">👨‍💻</span> Avec moi
+            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+              </svg>
+              Avec moi
             </h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3 text-gray-700">
-                <span class="text-green-500">✓</span>
-                <span><strong>Un seul interlocuteur</strong> du début à la fin</span>
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span><strong>Un seul interlocuteur</strong> du debut a la fin</span>
               </li>
               <li class="flex items-start gap-3 text-gray-700">
-                <span class="text-green-500">✓</span>
-                <span><strong>Communication directe</strong> et réactive</span>
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span><strong>Communication directe</strong> et reactive</span>
               </li>
               <li class="flex items-start gap-3 text-gray-700">
-                <span class="text-green-500">✓</span>
-                <span><strong>Tarifs compétitifs</strong> sans frais cachés</span>
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span><strong>Tarifs competitifs</strong> sans frais caches</span>
               </li>
               <li class="flex items-start gap-3 text-gray-700">
-                <span class="text-green-500">✓</span>
-                <span><strong>Flexibilité</strong> et adaptation à vos besoins</span>
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span><strong>Flexibilite</strong> et adaptation a vos besoins</span>
               </li>
             </ul>
           </div>
@@ -186,10 +249,10 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center text-white">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
-          Prêt à démarrer votre projet ?
+          Pret a demarrer votre projet ?
         </h2>
         <p class="text-xl text-blue-100 mb-8">
-          Discutons ensemble de vos besoins. Premier échange gratuit et sans engagement.
+          Discutons ensemble de vos besoins. Premier echange gratuit et sans engagement.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <button (click)="scrollToContact()"
@@ -208,8 +271,8 @@
   <!-- Footer simplifié -->
   <footer class="py-8 bg-gray-900 text-gray-400">
     <div class="container mx-auto px-4 text-center">
-      <p>NonoDevCo - Arnaud Derisbourg - Développeur Web Freelance</p>
-      <p class="mt-2 text-sm">Bordeaux - Saint-Médard-en-Jalles - Gironde</p>
+      <p>NonoDevCo - Arnaud Derisbourg - Developpeur Web Freelance</p>
+      <p class="mt-2 text-sm">Bordeaux - Saint-Medard-en-Jalles - Gironde</p>
     </div>
   </footer>
 </div>

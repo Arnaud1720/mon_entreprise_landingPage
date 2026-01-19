@@ -17,7 +17,7 @@ export class MonApprocheComponent implements OnInit {
     {
       numero: 1,
       titre: 'Écoute & Compréhension',
-      icon: '👂',
+      iconType: 'ear',
       description: 'Tout commence par un échange approfondi. Je prends le temps de comprendre votre activité, vos objectifs, vos contraintes et votre vision.',
       details: [
         'Appel découverte gratuit de 30 minutes',
@@ -29,7 +29,7 @@ export class MonApprocheComponent implements OnInit {
     {
       numero: 2,
       titre: 'Co-construction du Projet',
-      icon: '📝',
+      iconType: 'document',
       description: 'Ensemble, nous mettons sur papier les fonctionnalités, le design et les spécifications. Vous êtes acteur du projet, pas spectateur.',
       details: [
         'Rédaction collaborative du cahier des charges',
@@ -41,7 +41,7 @@ export class MonApprocheComponent implements OnInit {
     {
       numero: 3,
       titre: 'Développement Itératif',
-      icon: '⚙️',
+      iconType: 'code',
       description: 'Je développe par étapes avec des livraisons régulières. Vous voyez le projet avancer et pouvez donner votre avis à chaque étape.',
       details: [
         'Livraisons intermédiaires pour validation',
@@ -53,7 +53,7 @@ export class MonApprocheComponent implements OnInit {
     {
       numero: 4,
       titre: 'Points Réguliers',
-      icon: '📅',
+      iconType: 'calendar',
       description: 'Communication transparente avec des points hebdomadaires adaptés à votre disponibilité. Vous savez toujours où en est votre projet.',
       details: [
         'Points visio ou téléphone selon vos préférences',
@@ -65,7 +65,7 @@ export class MonApprocheComponent implements OnInit {
     {
       numero: 5,
       titre: 'Livraison & Accompagnement',
-      icon: '🚀',
+      iconType: 'check',
       description: 'La livraison n\'est pas la fin de notre collaboration. Je vous accompagne pour la prise en main et reste disponible après.',
       details: [
         'Formation à l\'utilisation de votre outil',
@@ -79,22 +79,22 @@ export class MonApprocheComponent implements OnInit {
   // Mes engagements
   engagements = [
     {
-      icon: '🤝',
+      iconType: 'handshake',
       titre: 'Relation de confiance',
       description: 'Pas de jargon technique inutile. Je vous explique clairement les choix et vous implique dans les décisions.'
     },
     {
-      icon: '⏰',
+      iconType: 'clock',
       titre: 'Respect des délais',
       description: 'Je m\'engage sur un planning réaliste et je vous tiens informé de l\'avancement. Pas de mauvaises surprises.'
     },
     {
-      icon: '💬',
+      iconType: 'chat',
       titre: 'Communication directe',
       description: 'Vous travaillez directement avec moi, pas avec un commercial ou un intermédiaire. Un seul interlocuteur du début à la fin.'
     },
     {
-      icon: '🔧',
+      iconType: 'shield',
       titre: 'Qualité sans compromis',
       description: 'Code propre, bonnes pratiques, tests rigoureux. Votre projet est construit pour durer et évoluer.'
     }
