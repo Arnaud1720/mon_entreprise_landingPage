@@ -54,7 +54,7 @@ export class TestimonialsComponent implements OnInit {
       },
       averageRating: 5,
       comment: 'Arnaud a ete tres professionnel et a l\'ecoute tout au long du projet. La communication etait excellente. Il est meme alle au-dela de mes attentes en creant une application mobile evolutive. Je recommande vivement !',
-      projectType: 'Site WordPress',
+      projectType: 'SaaS WordPress',
       source: 'direct',
       date: 'Janvier 2026'
     }
