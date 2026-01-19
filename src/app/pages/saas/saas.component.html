@@ -16,7 +16,7 @@
         Vous avez une idee de plateforme ? Je la transforme en realite. Marketplace, outil metier, application de reservation... Je cree votre SaaS de A a Z.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-xl hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+        <a href="/#contact" (click)="trackCtaClick('hero_devis')" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-xl hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
           Demander un devis gratuit
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -302,11 +302,11 @@
           </ul>
 
           <!-- Bouton Contact (paiement comptant) -->
-          <a *ngIf="!isMonthly" href="/#contact" class="block w-full py-3 px-4 bg-green-500 hover:bg-green-600 text-white text-center font-bold rounded-xl transition-all duration-300">
+          <a *ngIf="!isMonthly" href="/#contact" (click)="trackCtaClick('tarif_essentiel_contact')" class="block w-full py-3 px-4 bg-green-500 hover:bg-green-600 text-white text-center font-bold rounded-xl transition-all duration-300">
             Discutons de votre projet
           </a>
           <!-- Bouton Stripe (paiement mensuel) -->
-          <a *ngIf="isMonthly" href="https://buy.stripe.com/4gMeVf8SoeT76JZedC3ZK00" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 bg-green-500 hover:bg-green-600 text-white text-center font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+          <a *ngIf="isMonthly" href="https://buy.stripe.com/4gMeVf8SoeT76JZedC3ZK00" target="_blank" rel="noopener noreferrer" (click)="trackCtaClick('tarif_essentiel_stripe')" class="w-full py-3 px-4 bg-green-500 hover:bg-green-600 text-white text-center font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>
             Souscrire maintenant
           </a>
@@ -349,11 +349,11 @@
           </ul>
 
           <!-- Bouton Contact (paiement comptant) -->
-          <a *ngIf="!isMonthly" href="/#contact" class="block w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-center font-bold rounded-xl transition-all duration-300 shadow-lg">
+          <a *ngIf="!isMonthly" href="/#contact" (click)="trackCtaClick('tarif_pro_contact')" class="block w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-center font-bold rounded-xl transition-all duration-300 shadow-lg">
             Discutons de votre projet
           </a>
           <!-- Bouton Stripe (paiement mensuel) -->
-          <a *ngIf="isMonthly" href="https://buy.stripe.com/eVq4gB3y46mBfgv9Xm3ZK01" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-center font-bold rounded-xl transition-all duration-300 shadow-lg flex items-center justify-center gap-2">
+          <a *ngIf="isMonthly" href="https://buy.stripe.com/eVq4gB3y46mBfgv9Xm3ZK01" target="_blank" rel="noopener noreferrer" (click)="trackCtaClick('tarif_pro_stripe')" class="w-full py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-center font-bold rounded-xl transition-all duration-300 shadow-lg flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>
             Souscrire maintenant
           </a>
@@ -395,11 +395,11 @@
           </ul>
 
           <!-- Bouton Contact (paiement comptant) -->
-          <a *ngIf="!isMonthly" href="/#contact" class="block w-full py-3 px-4 bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold rounded-xl transition-all duration-300">
+          <a *ngIf="!isMonthly" href="/#contact" (click)="trackCtaClick('tarif_business_contact')" class="block w-full py-3 px-4 bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold rounded-xl transition-all duration-300">
             Discutons de votre projet
           </a>
           <!-- Bouton Stripe (paiement mensuel) -->
-          <a *ngIf="isMonthly" href="https://buy.stripe.com/aFa28tecI3apd8nd9y3ZK02" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
+          <a *ngIf="isMonthly" href="https://buy.stripe.com/aFa28tecI3apd8nd9y3ZK02" target="_blank" rel="noopener noreferrer" (click)="trackCtaClick('tarif_business_stripe')" class="w-full py-3 px-4 bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"/></svg>
             Souscrire maintenant
           </a>
@@ -435,7 +435,7 @@
             <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">✓</span> SLA & support dedie</li>
           </ul>
 
-          <a href="/#contact" class="block w-full py-3 px-4 bg-gray-800 hover:bg-gray-900 text-white text-center font-bold rounded-xl transition-all duration-300">
+          <a href="/#contact" (click)="trackCtaClick('tarif_enterprise_contact')" class="block w-full py-3 px-4 bg-gray-800 hover:bg-gray-900 text-white text-center font-bold rounded-xl transition-all duration-300">
             Discutons de votre projet
           </a>
         </div>
@@ -608,7 +608,7 @@
         Discutons de votre projet. Je vous accompagne de l'idee au lancement, avec un devis gratuit et sans engagement.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+        <a href="/#contact" (click)="trackCtaClick('footer_devis')" class="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
           Demander un devis gratuit
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

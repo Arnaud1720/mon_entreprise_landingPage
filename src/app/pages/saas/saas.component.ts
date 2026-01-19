@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SeoService } from '../../services/seo.service';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-saas',
@@ -13,7 +14,10 @@ import { SeoService } from '../../services/seo.service';
 export class SaasComponent implements OnInit {
   isMonthly = false; // false = comptant, true = mensuel
 
-  constructor(private seoService: SeoService) {}
+  constructor(
+    private seoService: SeoService,
+    private analytics: AnalyticsService
+  ) {}
 
   togglePricing() {
     this.isMonthly = !this.isMonthly;
@@ -31,8 +35,16 @@ export class SaasComponent implements OnInit {
     });
   }
 
-  scrollToContact() {
+  scrollToContact(ctaSource: string = 'saas_page') {
+    // Tracking GA4
+    this.analytics.trackSaasCtaClick(ctaSource);
+
     // Navigate to home and scroll to contact
     window.location.href = '/#contact';
+  }
+
+  // Tracking pour les CTAs (sans bloquer la navigation)
+  trackCtaClick(ctaType: string): void {
+    this.analytics.trackSaasCtaClick(ctaType);
   }
 }

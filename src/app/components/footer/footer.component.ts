@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AnalyticsService } from '../../services/analytics.service';
 
 interface CodeParticle {
   x: number;
@@ -54,6 +55,8 @@ export class FooterComponent implements OnInit, OnDestroy, AfterViewInit {
     'text-pink-400'
   ];
 
+  constructor(private analytics: AnalyticsService) {}
+
   ngOnInit(): void {
     this.generateCodeParticles();
     this.startBinaryAnimation();
@@ -76,7 +79,17 @@ export class FooterComponent implements OnInit, OnDestroy, AfterViewInit {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      this.analytics.trackNavClick(`footer_${sectionId}`);
     }
+  }
+
+  // Tracking liens externes
+  trackExternalLink(platform: string, url: string): void {
+    this.analytics.trackExternalLink(platform, url);
+  }
+
+  trackEmailClick(): void {
+    this.analytics.trackEmailClick();
   }
 
   onFooterHover(isHovered: boolean): void {

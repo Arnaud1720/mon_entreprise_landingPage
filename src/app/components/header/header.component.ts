@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,8 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
 export class HeaderComponent {
   mobileMenuOpen = false;
   isScrolled = false;
+
+  constructor(private analytics: AnalyticsService) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -27,6 +30,9 @@ export class HeaderComponent {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       this.mobileMenuOpen = false;
+
+      // Tracking GA4
+      this.analytics.trackNavClick(sectionId);
     }
   }
 }

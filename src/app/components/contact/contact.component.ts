@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailService } from '../../services/email.service';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-contact',
@@ -18,7 +19,8 @@ export class ContactComponent {
 
   constructor(
     private fb: FormBuilder,
-    private emailService: EmailService
+    private emailService: EmailService,
+    private analytics: AnalyticsService
   ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -36,6 +38,9 @@ export class ContactComponent {
       try {
         // Envoyer l'email via EmailJS
         await this.emailService.sendEmail(this.contactForm.value);
+
+        // Tracking GA4 - Formulaire soumis avec succes
+        this.analytics.trackFormSubmit(this.contactForm.value.projectType || 'contact');
 
         // Afficher le message de succès
         this.formSubmitted = true;
