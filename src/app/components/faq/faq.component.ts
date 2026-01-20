@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID, HostListener } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 interface FaqItem {
@@ -6,6 +6,12 @@ interface FaqItem {
   answer: string;
   isOpen: boolean;
   scrollProgress: number;
+}
+
+interface TouchState {
+  startX: number;
+  startY: number;
+  currentX: number;
 }
 
 @Component({
@@ -64,11 +70,14 @@ interface FaqItem {
               </div>
             </button>
 
-            <!-- Answer Container - Zone FIXE qui capture le scroll -->
+            <!-- Answer Container - Zone FIXE qui capture le scroll/swipe -->
             <div
               *ngIf="item.isOpen"
               class="answer-container"
               (wheel)="onWheel($event, i)"
+              (touchstart)="onTouchStart($event)"
+              (touchmove)="onTouchMove($event, i)"
+              (touchend)="onTouchEnd()"
             >
               <!-- Barre de progression sticky en haut -->
               <div class="px-6 py-3 bg-gray-800/50 border-b border-white/10">
@@ -111,10 +120,15 @@ interface FaqItem {
                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
                     <span class="ml-3 text-xs text-gray-500 font-mono">réponse.txt</span>
                     <div class="ml-auto flex items-center gap-2 text-xs text-gray-600">
-                      <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <!-- Desktop: icône molette -->
+                      <svg *ngIf="!isMobile" class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                       </svg>
-                      <span>Molette pour révéler</span>
+                      <!-- Mobile: icône swipe -->
+                      <svg *ngIf="isMobile" class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                      <span>{{ isMobile ? 'Swipez →' : 'Molette pour révéler' }}</span>
                     </div>
                   </div>
 
@@ -145,16 +159,26 @@ interface FaqItem {
                   </div>
                 </div>
 
-                <!-- Indication scroll -->
+                <!-- Indication scroll/swipe -->
                 <div
                   *ngIf="item.scrollProgress < 100"
                   class="mt-4 flex justify-center"
                 >
-                  <div class="flex items-center gap-2 text-gray-500 text-sm px-4 py-2 rounded-full bg-white/5">
+                  <!-- Desktop: indicateur molette -->
+                  <div *ngIf="!isMobile" class="flex items-center gap-2 text-gray-500 text-sm px-4 py-2 rounded-full bg-white/5">
                     <div class="scroll-indicator">
                       <div class="scroll-wheel"></div>
                     </div>
                     <span>Scrollez avec la molette</span>
+                  </div>
+                  <!-- Mobile: indicateur swipe -->
+                  <div *ngIf="isMobile" class="flex items-center gap-2 text-gray-500 text-sm px-4 py-2 rounded-full bg-white/5">
+                    <div class="swipe-indicator">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </div>
+                    <span>Swipez vers la droite</span>
                   </div>
                 </div>
               </div>
@@ -267,10 +291,22 @@ interface FaqItem {
       0% { top: 6px; opacity: 1; }
       100% { top: 16px; opacity: 0; }
     }
+
+    /* Indicateur swipe pour mobile */
+    .swipe-indicator {
+      animation: swipeRight 1.5s infinite ease-in-out;
+    }
+
+    @keyframes swipeRight {
+      0%, 100% { transform: translateX(0); opacity: 0.5; }
+      50% { transform: translateX(8px); opacity: 1; }
+    }
   `]
 })
-export class FaqComponent {
+export class FaqComponent implements OnInit {
   activeFaqIndex: number | null = null;
+  isMobile = false;
+  private touchState: TouchState = { startX: 0, startY: 0, currentX: 0 };
 
   faqItems: FaqItem[] = [
     {
@@ -313,6 +349,17 @@ export class FaqComponent {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.checkMobile();
+      window.addEventListener('resize', () => this.checkMobile());
+    }
+  }
+
+  private checkMobile(): void {
+    this.isMobile = window.innerWidth < 768 || 'ontouchstart' in window;
+  }
+
   toggleFaq(index: number): void {
     this.faqItems.forEach((item, i) => {
       if (i !== index) {
@@ -345,6 +392,39 @@ export class FaqComponent {
 
     // Mettre à jour la progression
     item.scrollProgress = Math.max(0, Math.min(100, item.scrollProgress + increment));
+  }
+
+  // Touch events pour mobile (swipe horizontal)
+  onTouchStart(event: TouchEvent): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    const touch = event.touches[0];
+    this.touchState.startX = touch.clientX;
+    this.touchState.startY = touch.clientY;
+    this.touchState.currentX = touch.clientX;
+  }
+
+  onTouchMove(event: TouchEvent, index: number): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - this.touchState.currentX;
+    const deltaY = Math.abs(touch.clientY - this.touchState.startY);
+
+    // Si le mouvement est plus horizontal que vertical, on gère le swipe
+    if (Math.abs(deltaX) > deltaY) {
+      event.preventDefault();
+
+      const item = this.faqItems[index];
+      // Swipe vers la droite = progression positive
+      const increment = deltaX * 0.5;
+      item.scrollProgress = Math.max(0, Math.min(100, item.scrollProgress + increment));
+    }
+
+    this.touchState.currentX = touch.clientX;
+  }
+
+  onTouchEnd(): void {
+    this.touchState = { startX: 0, startY: 0, currentX: 0 };
   }
 
   getAnswerChars(answer: string): string[] {
