@@ -310,8 +310,8 @@ export class FaqComponent implements OnInit {
 
   faqItems: FaqItem[] = [
     {
-      question: 'Combien coûte un site WordPress ?',
-      answer: 'Un site WordPress sur mesure démarre à partir de 1 500€ HT pour un site vitrine de 5 pages. Le tarif peut évoluer selon les fonctionnalités souhaitées (e-commerce, réservation, espace membre...). Bonne nouvelle : je propose un paiement en 3x sans frais (à la signature, à mi-projet, à la livraison). Chaque projet fait l\'objet d\'un devis personnalisé gratuit.',
+      question: 'Comment obtenir un devis ?',
+      answer: 'Chaque projet est unique, c\'est pourquoi je propose un devis personnalisé gratuit. Remplissez le formulaire de contact en décrivant votre besoin, et je vous recontacte sous 48h pour en discuter. Le tarif dépend de la complexité du projet, des fonctionnalités souhaitées et de vos délais. Bonne nouvelle : je propose un paiement en plusieurs fois sans frais.',
       isOpen: false,
       scrollProgress: 0
     },
@@ -335,13 +335,13 @@ export class FaqComponent implements OnInit {
     },
     {
       question: 'Quelles technologies utilisez-vous ?',
-      answer: 'Je maîtrise un large éventail de technologies : WordPress pour les sites vitrines administrables, Angular et React pour les interfaces modernes, Java/Spring Boot pour les backends robustes, et bien d\'autres (Node.js, TypeScript, Tailwind CSS...). Le choix dépend de vos besoins spécifiques.',
+      answer: 'Je maîtrise un large éventail de technologies : WordPress pour les sites vitrines administrables, Angular pour les interfaces modernes, Java/Spring Boot pour les backends robustes, et bien d\'autres (Node.js, TypeScript, Tailwind CSS...). Le choix dépend de vos besoins spécifiques.',
       isOpen: false,
       scrollProgress: 0
     },
     {
-      question: 'Comment fonctionne le paiement mensuel pour les SaaS ?',
-      answer: 'Pour les projets SaaS, je propose un paiement échelonné sur 12 mois avec engagement. Par exemple, un SaaS Starter à 3 500€ peut être réglé en 12 mensualités de 350€. Le projet est développé et livré selon le planning convenu, les paiements continuent jusqu\'au terme des 12 mois. C\'est idéal pour lancer votre projet sans mobiliser toute la trésorerie d\'un coup.',
+      question: 'Puis-je modifier mon site moi-même ?',
+      answer: 'Absolument ! C\'est même l\'un de mes points forts. Je crée des sites WordPress avec un système de blocs intuitif qui vous permet de modifier vos textes, images et contenus sans toucher au code. Une formation est incluse à la livraison pour vous rendre totalement autonome.',
       isOpen: false,
       scrollProgress: 0
     }
