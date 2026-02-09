@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero.component';
+import { WhyWebsiteComponent } from '../../components/why-website/why-website.component';
 import { ServicesComponent } from '../../components/services/services.component';
 import { PortfolioComponent } from '../../components/portfolio/portfolio.component';
 import { ProcessComponent } from '../../components/process/process.component';
@@ -17,6 +18,7 @@ import { SeoService } from '../../services/seo.service';
   imports: [
     CommonModule,
     HeroComponent,
+    WhyWebsiteComponent,
     ServicesComponent,
     PortfolioComponent,
     ProcessComponent,
@@ -35,13 +37,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.seoService.updateMetaTags({
-      title: 'Développeur Web Freelance WordPress & Java Angular | Arnaud Derisbourg',
-      description: 'Développeur web freelance expert WordPress, Java, Spring Boot et Angular 17+. Création de sites vitrines administrables et applications web sur mesure pour TPE/PME en France. Devis gratuit.',
-      keywords: 'développeur web freelance, développeur wordpress, développeur java, développeur angular, spring boot, site vitrine, application web, développement web sur mesure, freelance informatique, création site internet, TPE PME, développeur full stack, react, typescript, paris, france',
+      title: 'NonoDevCo | Création Sites WordPress pour Artisans à Bordeaux',
+      description: 'Création de sites WordPress clés en main pour artisans et TPE en Gironde. Plombier, électricien, menuisier... Modifiez votre site vous-même sans coder. Devis gratuit sous 48h.',
+      keywords: 'création site artisan bordeaux, site internet artisan gironde, développeur wordpress bordeaux, site web plombier, site web électricien, nonodevco, développeur saint-médard-en-jalles',
       author: 'Arnaud Derisbourg',
       type: 'website',
-      url: 'https://votresite.com',
-      image: 'https://votresite.com/assets/og-image.jpg'
+      url: 'https://nonodevco.com',
+      image: 'https://nonodevco.com/assets/og-image.jpg'
     });
 
     this.seoService.createStructuredData();
