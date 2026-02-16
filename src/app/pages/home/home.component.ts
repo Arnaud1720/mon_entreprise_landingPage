@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
     this.seoService.updateMetaTags({
       title: 'NonoDevCo | Création Sites WordPress pour Artisans à Bordeaux',
       description: 'Création de sites WordPress clés en main pour artisans et TPE en Gironde. Plombier, électricien, menuisier... Modifiez votre site vous-même sans coder. Devis gratuit sous 48h.',
-      keywords: 'création site artisan bordeaux, site internet artisan gironde, développeur wordpress bordeaux, site web plombier, site web électricien, nonodevco, développeur saint-médard-en-jalles',
+      keywords: 'création site artisan bordeaux, site internet artisan gironde, développeur wordpress bordeaux, site web plombier, site web électricien, site web menuisier, site web maçon, site web peintre, site web carreleur, site web chauffagiste, site web couvreur, site web serrurier, site web paysagiste, nonodevco, développeur saint-médard-en-jalles',
       author: 'Arnaud Derisbourg',
       type: 'website',
       url: 'https://nonodevco.com',

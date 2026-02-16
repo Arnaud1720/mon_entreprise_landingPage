@@ -338,6 +338,34 @@ body {
   color: white;
 }
 
+/* ===== PROTECTION DU CONTENU ===== */
+
+/* Désactiver la sélection de texte */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Désactiver le glisser-déposer des images */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: auto;
+}
+
+/* Réactiver la sélection uniquement dans les champs de formulaire */
+input, textarea, select, [contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 /* ===== GOOGLE TRANSLATE - MASQUER LA BARRE ===== */
 .goog-te-banner-frame,
 .skiptranslate,

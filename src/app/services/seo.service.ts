@@ -90,7 +90,7 @@ export class SeoService {
         },
         'priceRange': '€€',
         'areaServed': ['Bordeaux', 'Saint-Médard-en-Jalles', 'Gironde', 'Nouvelle-Aquitaine', 'France'],
-        'serviceType': ['Développement WordPress', 'Développement Java', 'Développement Angular', 'Création site vitrine', 'Application web sur mesure', 'SaaS']
+        'serviceType': ['Développement WordPress', 'Site web artisan', 'Site web plombier', 'Site web électricien', 'Site web menuisier', 'Site web maçon', 'Site web peintre', 'Site web carreleur', 'Site web chauffagiste', 'Site web couvreur', 'Création site vitrine TPE', 'Application web sur mesure']
       };
 
       // Person Schema
